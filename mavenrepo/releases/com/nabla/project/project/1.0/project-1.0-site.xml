@@ -30,8 +30,8 @@
       <item name="Xdoc Example" href="xdoc.html" />
     </menu>
     <menu name="Manuals">
-      <item name="Site Administration" href="site-administration.html" />
-      <item name="Technical Administration" href="technical-administration.html" />
+      <item name="Site Administration" href="tech/site-administration.html" />
+      <item name="Technical Administration" href="tech/technical-administration.html" />
     </menu>
     <menu name="Manuals">
       <item name="Wiki" href="http://code.google.com/p/alban/w/list" />
@@ -63,7 +63,6 @@
     </menu>
     <menu name="Components">
       <item name="Components List" href="available-plugins.html" />
-      <item name="Lutece plugin for Maven2" href="/plugins/maven-lutece-plugin/index.html" />
     </menu>
     <menu name="Downloads" inherit="bottom">
       <item name="Released versions" href="http://code.google.com/p/alban/downloads/list" />
@@ -79,19 +78,9 @@
     <menu name="Parent Project" ref="parent">
       <item name="Dependencies pom file" href="..\index.html" />
     </menu>
-    <menu name="Modules">
-      <item name="Build Tools" href="/build-tools/index.html" />
-      <item name="BackEnd" href="/kplustp/index.html" />
-      <item name="J2EE" href="/maven-builder-common/index.html" />
-      <item name="Presentation Server" href="/karma/index.html" />
-      <item name="Presentation Server Sample" href="/karmaSample/index.html" />
-    </menu>
-    <menu name="Doxygen Resources">
-      <item name="Doxygen BACKEND" href="/BACKEND/doc/html/index.html" />
-      <item name="Doxygen BACKEND-APPS" href="/BACKEND-APPS/doc/html/index.html" />
-      <item name="Doxygen BACKEND-COMMON" href="/BACKEND-COMMON/doc/html/index.html" />
-      <item name="Doxygen BACKEND-INFRA" href="/BACKEND-INFRA/doc/html/index.html" />
-      <item name="Doxygen BACKEND-TOOLS" href="/BACKEND-TOOLS/doc/html/index.html" />
+    <menu name="Modules" ref="modules">
+      <item name="Maven Build Tools Configuration for quality metrics" href="..\build-tools/index.html" />
+      <item name="Sample" href="sample/index.html" />
     </menu>
     <menu inherit="bottom" ref="reports" />
   </body>
