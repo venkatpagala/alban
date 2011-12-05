@@ -1,0 +1,21 @@
+#labels Phase-Deploy
+#Building and deploying the Nabla Application on GlassFish.
+
+= Introduction =
+
+It is assumed here that you already have a running [http://glassfish.java.dev.net Glassfish] instance. While developing we used version 2.1 so it is garantueed to work with that version.
+
+  # Checkout the code from the repository  
+  # run 'mvn clean install'
+  # start database
+    * goto $J2EE_HOME/javadb/bin
+    * run 'startNetworkServer.bat' 
+  # goto the checkout directory again
+  # goto the setup directory
+  # run 'setup.bat'
+  # goto apps directory
+  # run mvn clean install
+  # run mvn:glassfish-deploy
+  # Open webbrowser and goto http://localhost:8080/ab
+
+That should be it to run and deploy the application. For all the steps taken this is the same. (Check the branches in subversion to checkout a certain step).
