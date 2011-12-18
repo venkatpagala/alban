@@ -5,7 +5,6 @@
 
 Here you can find some usefull link about andromda.
 
-
 = Details =
 
 If you are new try the following link to better understand Andromda :
@@ -17,7 +16,7 @@ http://www.andromda.org/docs/andromda-documentation/getting-started-java/env-set
 
 Below is the documentation that help you better understand how the code are generated regarding the UML model
 http://www.andromda.org/docs/andromda-cartridges/andromda-ejb3-cartridge/howto.html
-
+Check sub project HowToModel to get the sample code of this cartridge.
 
 Below a link with the sample done within this project :
 http://www.andromda.org/docs/samples.html
