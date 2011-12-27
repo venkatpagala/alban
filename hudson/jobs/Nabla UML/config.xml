@@ -530,15 +530,6 @@
     <hudson.plugins.jdepend.JDependRecorder>
       <configuredJDependFile></configuredJDependFile>
     </hudson.plugins.jdepend.JDependRecorder>
-    <hudson.plugins.performance.PerformancePublisher>
-      <errorFailedThreshold>0</errorFailedThreshold>
-      <errorUnstableThreshold>0</errorUnstableThreshold>
-      <parsers>
-        <hudson.plugins.performance.JUnitParser>
-          <glob>**/TEST-*.xml</glob>
-        </hudson.plugins.performance.JUnitParser>
-      </parsers>
-    </hudson.plugins.performance.PerformancePublisher>
   </publishers>
   <buildWrappers/>
 </maven2-moduleset>
