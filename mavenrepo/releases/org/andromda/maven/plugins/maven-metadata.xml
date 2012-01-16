@@ -21,5 +21,10 @@
       <prefix>andromda</prefix>
       <artifactId>andromda-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Application Generator Maven Plugin</name>
+      <prefix>andromdapp</prefix>
+      <artifactId>andromdapp-maven-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
