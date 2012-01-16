@@ -11,5 +11,10 @@
       <prefix>andromda-bootstrap</prefix>
       <artifactId>andromda-bootstrap-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Bootstrap Install Plugin</name>
+      <prefix>andromda-bootstrap-install</prefix>
+      <artifactId>andromda-bootstrap-install-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
