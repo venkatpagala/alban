@@ -41,5 +41,10 @@
       <prefix>andromda-translation-library</prefix>
       <artifactId>andromda-translation-library-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Beautifier Plugin</name>
+      <prefix>andromda-beautifier</prefix>
+      <artifactId>andromda-beautifier-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
