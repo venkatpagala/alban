@@ -6,5 +6,10 @@
       <prefix>andromda-model-archiver</prefix>
       <artifactId>andromda-model-archiver-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Bootstrap Plugin</name>
+      <prefix>andromda-bootstrap</prefix>
+      <artifactId>andromda-bootstrap-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
