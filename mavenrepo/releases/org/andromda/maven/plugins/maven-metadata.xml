@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>AndroMDA Model Archiver Plugin</name>
+      <prefix>andromda-model-archiver</prefix>
+      <artifactId>andromda-model-archiver-plugin</artifactId>
+    </plugin>
+  </plugins>
+</metadata>
