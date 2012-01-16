@@ -6,5 +6,10 @@
       <prefix>andromda-site</prefix>
       <artifactId>andromda-site-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Site Cartridge Plugin</name>
+      <prefix>andromda-site-cartridge</prefix>
+      <artifactId>andromda-site-cartridge-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
