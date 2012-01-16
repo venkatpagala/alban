@@ -26,5 +26,10 @@
       <prefix>andromdapp</prefix>
       <artifactId>andromdapp-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA .NET Application Generator Maven Plugin</name>
+      <prefix>andromdanetapp</prefix>
+      <artifactId>andromdanetapp-maven-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
