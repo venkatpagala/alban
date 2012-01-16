@@ -31,5 +31,10 @@
       <prefix>andromdanetapp</prefix>
       <artifactId>andromdanetapp-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Cartridge Maven Plugin</name>
+      <prefix>andromda-cartridge</prefix>
+      <artifactId>andromda-cartridge-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
