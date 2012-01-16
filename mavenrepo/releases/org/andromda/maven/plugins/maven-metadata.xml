@@ -36,5 +36,10 @@
       <prefix>andromda-cartridge</prefix>
       <artifactId>andromda-cartridge-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>AndroMDA Translation Library Maven Plugin</name>
+      <prefix>andromda-translation-library</prefix>
+      <artifactId>andromda-translation-library-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
