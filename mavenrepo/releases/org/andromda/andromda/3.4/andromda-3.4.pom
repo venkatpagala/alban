@@ -1245,10 +1245,12 @@
                 </site>
                 -->
             </distributionManagement>
+            <!--
             <properties>
                 <repositoryId>andromda-snapshots</repositoryId>
                 <url>http://oss.sonatype.org/content/repositories/snapshots</url>
             </properties>
+            -->
         </profile>
         <profile>
             <id>andromda-full</id>
