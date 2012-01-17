@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.andromda.cartridges</groupId>
+  <artifactId>andromda-jsf-cartridge-components</artifactId>
+  <version>3.4</version>
+  <versioning>
+    <versions>
+      <version>3.4</version>
+    </versions>
+    <lastUpdated>20120117013009</lastUpdated>
+  </versioning>
+</metadata>
