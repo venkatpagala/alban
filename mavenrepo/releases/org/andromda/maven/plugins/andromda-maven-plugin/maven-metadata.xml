@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.andromda.maven.plugins</groupId>
+  <artifactId>andromda-maven-plugin</artifactId>
+  <version>3.4</version>
+  <versioning>
+    <latest>3.4</latest>
+    <versions>
+      <version>3.4</version>
+    </versions>
+    <lastUpdated>20120120094339</lastUpdated>
+  </versioning>
+</metadata>
