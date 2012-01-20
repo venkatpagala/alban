@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.andromda.repositories</groupId>
+  <artifactId>andromda-repository-emf</artifactId>
+  <version>3.4</version>
+  <versioning>
+    <versions>
+      <version>3.4</version>
+    </versions>
+    <lastUpdated>20120120094427</lastUpdated>
+  </versioning>
+</metadata>
