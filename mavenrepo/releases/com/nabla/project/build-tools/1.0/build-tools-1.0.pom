@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!--
+	<parent>
+		<groupId>com.nabla.project</groupId>
+		<artifactId>dependencies</artifactId>
+		<version>1.0</version>
+		<relativePath>../dependencies/pom.xml</relativePath>
+	</parent>
+	-->
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nabla.project</groupId>
+	<artifactId>build-tools</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>Maven Build Tools Configuration for quality metrics</name>
+	<description>Nabla Maven Config - global configurations for quality metrics such as PMD FindBugs CheckStyle</description>
+
+	<scm>
+		<connection>scm:svn:http://alban.googlecode.com/svn/trunk/build-tools</connection>
+		<developerConnection>scm:svn:https://alban.googlecode.com/svn/trunk/build-tools</developerConnection>
+		<url>https://alban.googlecode.com/svn/trunk/build-tools</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>The Nabla Project</name>
+			<url>/src/main/resources/project/LICENSE-1.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>Nabla runs under a BSD license</comments>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>albandri</id>
+			<name>Alban Andrieu</name>
+			<email>alban.andrieu@nabla.mobi</email>
+			<organization>Nabla</organization>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<wagon.webdav.plugin.version>1.0-beta-2</wagon.webdav.plugin.version>
+		<wagon.svn.plugin.version>1.8</wagon.svn.plugin.version>
+		<wagon.ftp.plugin.version>1.0-beta-6</wagon.ftp.plugin.version>
+	</properties>
+			
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<targetPath>META-INF</targetPath>
+				<filtering>false</filtering>
+				<directory>${basedir}/src/main/resources/project</directory>
+				<includes>
+					<include>README-1.0.txt</include>
+					<include>LICENSE-1.0.txt</include>
+
+				</includes>
+			</resource>
+		</resources>
+		<extensions>
+			<!-- WebDAV for remote deployment -->
+			<!-- sonar desactivation required -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>${wagon.webdav.plugin.version}</version>
+			</extension>
+			<extension>
+				<groupId>org.jvnet.wagon-svn</groupId>
+				<artifactId>wagon-svn</artifactId>
+				<version>${wagon.svn.plugin.version}</version>
+			</extension>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>${wagon.ftp.plugin.version}</version>
+			</extension>
+		</extensions>					
+	</build>
+	
+        <profiles>
+		<!-- ================= START Environment Profiles ================= -->
+		<!--Profile configuration for local builds -->
+		<profile>
+			<id>local</id>
+            		<activation>            			
+			    <property>
+			    	<name>profile.activation</name>
+			    </property>
+			    <!--
+            		    <activeByDefault>true</activeByDefault>
+            		    <file>
+            		        <exists>${basedir}</exists>
+            		    </file>
+            		    -->
+            		</activation>
+			<distributionManagement>
+				<repository>
+					<id>local-releases</id>
+					<name>Internal Release Repository</name>
+					<url>${distributionManagement.repository.url}/releases/</url>
+					<!--<uniqueVersion>false</uniqueVersion> -->
+				</repository>
+				<snapshotRepository>
+					<id>local-snapshots</id>
+					<name>Internal Snapshot Repository</name>
+					<url>${distributionManagement.repository.url}/snapshots/</url>
+					<!--<uniqueVersion>false</uniqueVersion> -->
+				</snapshotRepository>
+				<site>
+					<id>website</id>
+					<name>Project Website</name>
+					<!--
+						<url>scp://${site.server}/${home.dir}/fullsite/site-deploy</url>
+						<url>file:/var/www/docs</url>
+					-->
+					<!--<url>file://${deploy.dir}</url>-->
+					<url>file:/tmp</url>
+				</site>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<!--Profile configuration for server builds -->
+			<id>server</id>
+			<activation>
+				<property>
+					<name>!profile.activation</name>
+				</property>
+			</activation>
+			<build>
+				<!--
+				<plugins>
+					<plugin>						
+						<artifactId>maven-gpg-plugin</artifactId>
+						<inherited>true</inherited>
+					</plugin>
+				</plugins>
+				-->
+			</build>
+			<distributionManagement>
+				<repository>
+					<id>server-releases</id>
+					<name>External Staging Repository</name>
+					<url>svn:https://alban.googlecode.com/svn/mavenrepo/releases</url>
+					<uniqueVersion>false</uniqueVersion>
+				</repository>
+				<snapshotRepository>
+					<id>server-snapshots</id>
+					<name>External Snapshot Repository</name>
+					<url>svn:https://alban.googlecode.com/svn/mavenrepo/snapshots</url>
+					<uniqueVersion>false</uniqueVersion>
+				</snapshotRepository>
+				<site>
+					<id>website</id>
+					<name>Project Website</name>
+					<url>ftp://www.nabla.mobi/maven</url>
+				</site>
+			</distributionManagement>
+            		<properties>
+            		    <repositoryId>server-snapshots</repositoryId>
+            		    <url>svn:https://alban.googlecode.com/svn/mavenrepo/snapshots</url>
+            		</properties>    			
+		</profile>	
+        </profiles>		
+</project>
