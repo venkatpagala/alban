@@ -1,0 +1,18 @@
+#labels Phase-Requirements,Phase-Implementation
+#Simple C++ Project with CMake.
+
+= Introduction =
+
+This is a sample project in order to easily compile test and package C++.
+With this sample you can use CPPUnit for Test, Boost for Thread and Mutex.
+You can easily import project in Eclipse.
+
+= Details =
+
+This is a sample project done for answering the following question for an interview :
+
+  * Coding Question1:  Write me a function that receives three integer inputs for the lengths of the sides of a triangle and returns one of four values to determine the triangle type (1=scalene, 2=isosceles, 3=equilateral, 4=error). Generate test cases for the function assuming another developer coded the function  
+
+  * Coding Question2: Implement a circular queue of integers of user-specified size using a simple array. Provide routines to initialize(), enqueue() and dequeue() the queue. Make it thread safe. 
+
+*Please do not to use existing class libraries for this question. Thanks!*
