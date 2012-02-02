@@ -58,9 +58,9 @@ make package
 
 = Library used = 
 
-cppunit for unitary test
-boost_thread-mt for mutext and thread
-boost_date_time-mt for date
+  * cppunit for unitary test
+  * boost_thread-mt for mutext and thread
+  * boost_date_time-mt for date
 
 = The Questions =
 
