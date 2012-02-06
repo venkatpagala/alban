@@ -3,9 +3,9 @@
 
 = Introduction =
 
-This is a sample project in order to easily compile test and package C++.
-With this sample you can use CPPUnit for Test, Boost for Thread and Mutex.
-You can easily import project in Eclipse.
+This is a sample project to compile, test and package C++.
+With this sample you can use CPPUnit for testing, Boost for multi-threading.
+You can easily import this project in to Eclipse.
 
 = Check out the project = 
 
@@ -14,34 +14,34 @@ Check out the project with svn.
 svn co http://alban.googlecode.com/svn/trunk/cpp cpp
 }}}
 
-or have a look following this link :
+Alternatively, you can use this link :
 
 https://code.google.com/p/alban/source/browse/#svn%2Ftrunk%2Fcpp
 
-= How to set up Eclipse = 
+= Set up Eclipse = 
 
-Before importing project into eclipse, run the following command. _You may nee to run it twice_
+Before importing a project into Eclipse, run the following command: _Note: You may need to run it twice_
 {{{
 cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
 ./cmake.sh
 }}}
 
-= How to compile = 
+= Compile your project = 
 
-Using Cygwin environement
+Use the Cygwin environment to compile your project:
 {{{
 cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
 make clean install
 }}}
 
-= See test results = 
+= View your test results = 
 
 {{{
 cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
 make test
 }}}
 
-= Run test manually = 
+= Run your test manually = 
 
 {{{
 cd /cygdrive/c/target/install/x86Linux/debug/bin
@@ -53,14 +53,14 @@ cd /cygdrive/c/target/install/x86Linux/debug/bin
 ./run_tests.exe circular_queueTest
 }}}
 
-= Run exe manually = 
+= Run your executable manually = 
 
 {{{
 cd /cygdrive/c/target/install/x86Linux/debug/bin
 ./run_app.exe
 }}}
 
-= Package = 
+= Package your project = 
 
 {{{
 cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
@@ -70,18 +70,18 @@ make package
 package MICROSOFT-1.2-CYGWIN-1 is available here:
 http://code.google.com/p/alban/downloads/list
 
-= Library used = 
+= For your information: library used = 
 
   * cppunit for unitary test
   * boost_thread-mt for mutext and thread
   * boost_date_time-mt for date
 
-= The Questions =
+= Test Questions =
 
-This is a sample project done for answering the following question for an interview :
+This is a sample project that answers the following questions for an interview:
 
-  * Coding Question1:  Write me a function that receives three integer inputs for the lengths of the sides of a triangle and returns one of four values to determine the triangle type (1=scalene, 2=isosceles, 3=equilateral, 4=error). Generate test cases for the function assuming another developer coded the function  
+  * Coding Question 1:  Write me a function that receives three integer inputs for the lengths of the sides of a triangle and returns one of four values to determine the triangle type (1=scalene, 2=isosceles, 3=equilateral, 4=error). Generate test cases for the function assuming another developer coded the function  
 
-  * Coding Question2: Implement a circular queue of integers of user-specified size using a simple array. Provide routines to initialize(), enqueue() and dequeue() the queue. Make it thread safe. 
+  * Coding Question 2: Implement a circular queue of integers of user-specified size using a simple array. Provide routines to initialize(), enqueue() and dequeue() the queue. Make it thread safe. 
 
 *Please do not to use existing class libraries for this question. Thanks!*
