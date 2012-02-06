@@ -7,7 +7,18 @@ This is a sample project in order to easily compile test and package C++.
 With this sample you can use CPPUnit for Test, Boost for Thread and Mutex.
 You can easily import project in Eclipse.
 
-= How to set up Eclips = 
+= Check out the project = 
+
+Check out the project with svn.
+{{{
+svn co http://alban.googlecode.com/svn/trunk/cpp cpp
+}}}
+
+or have a look following this link :
+
+https://code.google.com/p/alban/source/browse/#svn%2Ftrunk%2Fcpp
+
+= How to set up Eclipse = 
 
 Before importing project into eclipse, run the following command. _You may nee to run it twice_
 {{{
@@ -55,6 +66,9 @@ cd /cygdrive/c/target/install/x86Linux/debug/bin
 cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
 make package
 }}}
+
+package MICROSOFT-1.2-CYGWIN-1 is available here:
+http://code.google.com/p/alban/downloads/list
 
 = Library used = 
 
