@@ -70,6 +70,16 @@ make package
 package MICROSOFT-1.2-CYGWIN-1 is available here:
 http://code.google.com/p/alban/downloads/list
 
+= Document your project = 
+
+{{{
+cd /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin
+make DoxygenDoc
+}}}
+
+Doxygen documentation is available here:
+/cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin/doc
+
 = For your information: library used = 
 
   * cppunit for unitary test
