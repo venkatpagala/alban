@@ -80,6 +80,9 @@ make DoxygenDoc
 Doxygen documentation is available here:
 /cygdrive/c/workspace/users/albandri10/cpp/sample/build-cygwin/doc
 
+A sample is available here:
+http://www.maven.nabla.mobi/cpp/index.html
+
 = For your information: library used = 
 
   * cppunit for unitary test
