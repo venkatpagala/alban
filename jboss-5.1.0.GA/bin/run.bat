@@ -45,7 +45,6 @@ if "x%JAVA_OPTS%" == "x" (
 ) else (
   set "JAVA_OPTS=-Dprogram.name=%PROGNAME% %JAVA_OPTS%"
 )
-set JAVA_OPTS=-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512
 
 if "x%JAVA_HOME%" == "x" (
   set  JAVA=java
