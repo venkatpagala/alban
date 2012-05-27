@@ -45,6 +45,8 @@ Install usefull plugins.
 Go to menu and click :
 Help > Eclipse Marketplace...
 
+http://marketplace.eclipse.org/
+
 Plugins on Marketplace are :
   * JBoss Tools
   * Subclipse (beta)
@@ -72,6 +74,8 @@ Install usefull plugins.
 
 Go to menu and click :
 Help > Eclipse Marketplace...
+
+http://marketplace.eclipse.org/
 
 Plugins on Marketplace are :
   * CMake
