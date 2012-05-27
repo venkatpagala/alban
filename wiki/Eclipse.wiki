@@ -53,3 +53,4 @@ Go to :
 Windows > Preferences...
   * General -> Show heap status
   * General -> Editors -> Text Editors -> Show line numbers
+  * Install/Updates -> Automatic updates -> Automatic find new updates and notify me
