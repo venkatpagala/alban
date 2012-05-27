@@ -30,6 +30,9 @@ Help > Eclipse Marketplace...
 
 Plugins on Marketplace are :
   * JBoss Tools
+  * Subclipse (beta)
+  * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
+  * Velocity UI (http://jakarta.apache.org/velocity/)
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
@@ -38,10 +41,10 @@ Plugins links are :
   * Maven Integration for Eclipse Update Site - http://m2eclipse.sonatype.org/sites/m2e
   * Maven Integration for Eclipse Update Extras Site - http://m2eclipse.sonatype.org/sites/m2e-extras
   * Google Update Site for Eclipse 3.7 - http://dl.google.com/eclipse/plugin/3.7/
-  * VeloEdit - http://veloedit.sourceforge.net/updates
   * CheckStyle - http://eclipse-cs.sf.net/update/
   * Eclemma - http://update.eclemma.org/
   * FindBugs - http://findbugs.cs.umd.edu/eclipse
+  * VeloEdit - http://veloedit.sourceforge.net/updates
   * Hudson - http://hudson-eclipse.googlecode.com/svn/trunk/hudson-update/
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse/
 
