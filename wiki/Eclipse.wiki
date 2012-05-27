@@ -60,8 +60,8 @@ Plugins links are :
   * Google Update Site for Eclipse 3.7 - http://dl.google.com/eclipse/plugin/3.7
   * CheckStyle - http://eclipse-cs.sf.net/update
   * FindBugs - http://findbugs.cs.umd.edu/eclipse
-  * EclEmma - http://update.eclemma.org/
-  * PMD - 
+  * EclEmma - http://update.eclemma.org
+  * PMD - http://pmd.sf.net/eclipse
   * VeloEdit - http://veloedit.sourceforge.net/updates
   * Hudson - http://hudson-eclipse.googlecode.com/svn/trunk/hudson-update
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse
