@@ -10,7 +10,12 @@ Download Eclipse Indigo (Eclipse IDE for Java EE Developers, 212 MB) for
 Windows 32 Bit at :
 http://www.eclipse.org/downloads/
 
-= Details =
+Unzip and install it to : C:\eclipse-3.7
+Create a workspace folder at : C:\workspace\users\workspace-eclipse-3.7-application
+
+Once started 
+
+= Plugins =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
