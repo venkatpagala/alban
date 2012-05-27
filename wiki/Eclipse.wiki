@@ -4,24 +4,41 @@
 
 How to install and configure eclipse.
 
-= Installation =
+= JAVA Installation =
 
 Download Eclipse Indigo (Eclipse IDE for Java EE Developers, 212 MB) for 
 Windows 32 Bit at :
 http://www.eclipse.org/downloads/
 
 Unzip and install it to : 
-C:\eclipse-3.7
+C:\eclipse-j2ee-3.7
 
 Create a workspace folder at : 
-C:\workspace\users\workspace-eclipse-3.7-application
+C:\workspace\users\workspace-eclipsej2ee3.7-application
 
 Once started update eclipse.
 
 To do so go to menu and click :
 Help > Check for Updates
 
-= Plugins =
+= C++ Installation =
+
+Download Eclipse Indigo : Eclipse IDE for C/C++ Developers (includes Incubating components), 108 MB) for 
+Windows 32 Bit at :
+http://www.eclipse.org/downloads/
+
+Unzip and install it to : 
+C:\eclipse-cpp-3.7
+
+Create a workspace folder at : 
+C:\workspace\users\workspace-eclipse-cpp-3.7-application
+
+Once started update eclipse.
+
+To do so go to menu and click :
+Help > Check for Updates 
+
+= JAVA Plugins =
 
 Install usefull plugins.
 
@@ -47,6 +64,16 @@ Plugins links are :
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse/
 
   * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
+
+= C++ Plugins =
+
+Install usefull plugins.
+
+Go to menu and click :
+Help > Eclipse Marketplace...
+
+Plugins on Marketplace are :
+  * 
 
 = Settings =
 
