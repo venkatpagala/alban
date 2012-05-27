@@ -2,7 +2,7 @@
 
 = Introduction =
 
-How to configure eclipse.
+How to install and configure eclipse.
 
 = Installation =
 
@@ -51,3 +51,5 @@ Usefull settings.
 
 Go to :
 Windows > Preferences...
+  * General -> Show heap status
+  * General -> Editors -> Text Editors -> Show line numbers
