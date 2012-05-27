@@ -31,8 +31,6 @@ Help > Eclipse Marketplace...
 Plugins on Marketplace are :
   * JBoss Tools
   * Subclipse (beta)
-  * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
-  * Velocity UI (http://jakarta.apache.org/velocity/)
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
@@ -47,6 +45,8 @@ Plugins links are :
   * VeloEdit - http://veloedit.sourceforge.net/updates
   * Hudson - http://hudson-eclipse.googlecode.com/svn/trunk/hudson-update/
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse/
+
+  * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
 
 = Settings =
 
