@@ -73,7 +73,13 @@ Go to menu and click :
 Help > Eclipse Marketplace...
 
 Plugins on Marketplace are :
-  * 
+  * CMake
+
+If plugins not found on Eclipse Marketplace, go to :
+Help > Install New Software...
+
+Plugins links are :
+  * SConsolidator - http://www.sconsolidator.com/update (http://scons.org/wiki/EclipsePlugin)
 
 = Settings =
 
