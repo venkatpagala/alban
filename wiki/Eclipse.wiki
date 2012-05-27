@@ -10,14 +10,28 @@ Download Eclipse Indigo (Eclipse IDE for Java EE Developers, 212 MB) for
 Windows 32 Bit at :
 http://www.eclipse.org/downloads/
 
-Unzip and install it to : C:\eclipse-3.7
-Create a workspace folder at : C:\workspace\users\workspace-eclipse-3.7-application
+Unzip and install it to : 
+C:\eclipse-3.7
 
-Once started 
+Create a workspace folder at : 
+C:\workspace\users\workspace-eclipse-3.7-application
+
+Once started update eclipse.
+
+To do so go to menu and click :
+Help > Check for Updates
 
 = Plugins =
 
-Add your content here.  Format your content with:
+Install usefull plugins.
+
+Go to menu and click :
+Help > Eclipse Marketplace...
+
+If plugins not found on Eclipse Marketplace, go to :
+Help > Install New Software...
+
+Plugins are:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
