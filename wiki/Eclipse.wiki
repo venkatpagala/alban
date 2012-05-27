@@ -28,10 +28,12 @@ Install usefull plugins.
 Go to menu and click :
 Help > Eclipse Marketplace...
 
+Plugins on Marketplace are :
+  * JBoss Tools
+
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
 
-Plugins are:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Plugins links are :
+  * Google Update Site for Eclipse 3.7 - http://dl.google.com/eclipse/plugin/3.7/
+  * VeloEdit - http://veloedit.sourceforge.net/updates
