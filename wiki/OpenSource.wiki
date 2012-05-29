@@ -1,0 +1,14 @@
+#What is open source.
+
+= Definition =
+
+This is what I call open source :
+Code under this project can be use by any one, as soon as that person contribute to the project ;-).
+
+= Warning =
+
+I have not checked that every dependencies are open source. But it should be, as I did this project myself or found everything on the net.
+
+= Your right =
+
+If any code or dependency is not "free", delete it!!! (Or ask me to do so)
