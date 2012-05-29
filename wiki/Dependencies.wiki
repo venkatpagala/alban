@@ -4,13 +4,19 @@
 
 Below are some projets that I have used.
 
-= Details =
+= Dependencies =
 
 A Mavenized Seam Project Template :
 
 http://code.google.com/p/seam-maven-refimpl
 
 Used for is OpenEjb integration.
+
+GWT 2.x (and GWTP) & Seam 2.x Integration for JBoss AS
+
+http://code.google.com/p/gwt-seam/
+
+Used for gwt-seam.jar 
 
 = Tips =
 
