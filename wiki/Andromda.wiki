@@ -1,13 +1,13 @@
 #labels Phase-Support
-#Andromda links.
+#AndroMDA links.
 
 = Introduction =
 
-Here you can find some usefull link about andromda.
+Here you can find some usefull link about AndroMDA.
 
 = Details =
 
-If you are new try the following link to better understand Andromda :
+If you are new try the following link to better understand AndroMDA :
 http://www.andromda.org/docs/andromda-documentation/getting-started-java/index.html
 
 There you will find how to properly set your environment :
