@@ -1,0 +1,14 @@
+#How to check out this project.
+
+= Introduction =
+
+Tips in order not to checkout the whole project.
+
+= SVN =
+
+Source
+[http://code.google.com/p/alban/source/checkout Source]
+
+{{{
+verbatim code block
+}}}
