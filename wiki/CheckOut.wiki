@@ -6,7 +6,7 @@ Tips in order not to checkout the whole project.
 
 = SVN =
 
-Source
+See
 [http://code.google.com/p/alban/source/checkout Source]
 
 {{{
