@@ -11,3 +11,9 @@ A Mavenized Seam Project Template :
 http://code.google.com/p/seam-maven-refimpl
 
 Used for is OpenEjb integration.
+
+= Tips =
+
+Use maven generated site to check dependency convergence.
+
+[http://www.maven.nabla.mobi/databases/main/servers/customs/project/dependency-convergence.html Dependency Convergence]
