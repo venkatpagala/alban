@@ -27,8 +27,7 @@ Because I have mavenized this project yet.
 The GWT 2.x & Seam 2.x Integration seems to be based on the followinf articles :
  * [http://docs.jboss.com/seam/2.1.1.GA/reference/en-US/html/gwt.html Jboss Seam]
  * [http://unrealities.com/seamgwt/ Seam GWT index]
- * [http://unrealities.com/seamgwt/article_0.2.html Seam GWT]article
-
+ * [http://unrealities.com/seamgwt/article_0.2.html Seam GWT article]
 
 = Tips =
 
