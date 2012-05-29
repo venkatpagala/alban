@@ -1,0 +1,13 @@
+#Usefull links to dependencies.
+
+= Introduction =
+
+Below are some projets that I have used.
+
+= Details =
+
+A Mavenized Seam Project Template :
+
+http://code.google.com/p/seam-maven-refimpl
+
+Used for is OpenEjb integration.
