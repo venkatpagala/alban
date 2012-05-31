@@ -10,5 +10,5 @@ See
 [http://code.google.com/p/alban/source/checkout Source]
 
 {{{
-verbatim code block
+svn co svn:https://alban.googlecode.com/svn/trunk/ --depth empty
 }}}
