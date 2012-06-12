@@ -3,24 +3,24 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.andromda.metafacades</groupId>
-        <artifactId>andromda-uml-metafacades</artifactId>
-        <version>3.4</version>
+        <artifactId>uml2</artifactId>
+        <version>1.0</version>
     </parent>
     <artifactId>andromda-metafacades-uml</artifactId>
+    <version>3.4</version>
     <packaging>jar</packaging>
     <name>AndroMDA UML Common Metafacades</name>
     <description>
         The common UML metafacades. This is the set of core UML metafacades used to provide access UML meta models.
     </description>
-    <issueManagement>
-        <system>jira</system>
-        <url>http://www.andromda.org/jira/browse/UMLMETA</url>
-    </issueManagement>
+    
     <scm>
-        <connection>scm:svn:http://andromda.svn.sourceforge.net/svnroot/andromda/trunk/metafacades/uml/common</connection>
-        <developerConnection>scm:svn:https://andromda.svn.sourceforge.net/svnroot/andromda/trunk/metafacades/uml/common</developerConnection>
-        <url>http://andromda.svn.sourceforge.net/</url>
+    	<connection>scm:svn:http://alban.googlecode.com/svn/${project.svn.path}/nabla/metafacades/uml2/common</connection>
+    	<developerConnection>scm:svn:https://alban.googlecode.com/svn/${project.svn.path}/nabla/metafacades/uml2/common</developerConnection>
+    	<url>https://alban.googlecode.com/svn/${project.svn.path}/nabla/metafacades/uml2/common</url>
+    	<tag>HEAD</tag>
     </scm>
+        
     <build>
         <plugins>
             <plugin>
@@ -60,6 +60,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
+                <version>${maven.xml.plugin.version}</version>
                 <configuration>
                     <transformationSets>
                         <transformationSet>
@@ -89,9 +90,12 @@
                 </excludes>
             </resource>
         </resources>
+        <!--
         <pluginManagement>
         	<plugins>
+        	        -->
         		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<!--
         		<plugin>
         			<groupId>org.eclipse.m2e</groupId>
         			<artifactId>lifecycle-mapping</artifactId>
@@ -118,5 +122,6 @@
         		</plugin>
         	</plugins>
         </pluginManagement>
+        -->
     </build>
 </project>
