@@ -2,17 +2,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.andromda.profiles.uml2</groupId>
-        <artifactId>andromda-profiles-uml2</artifactId>
+        <artifactId>uml2</artifactId>
         <version>3.4</version>
     </parent>
     <packaging>xml.zip</packaging>
     <artifactId>andromda-profile</artifactId>
     <name>AndroMDA UML 2.0 Common Profile</name>
+    
     <scm>
-      <connection>scm:svn:http://andromda.svn.sourceforge.net/svnroot/andromda/trunk/profiles/uml-2.0/common</connection>
-      <developerConnection>scm:svn:https://andromda.svn.sourceforge.net/svnroot/andromda/trunk/profiles/uml-2.0/common</developerConnection>
-      <url>http://andromda.svn.sourceforge.net/</url>
+    	<connection>scm:svn:http://alban.googlecode.com/svn/${project.svn.path}/nabla/profiles/uml2/common</connection>
+    	<developerConnection>scm:svn:https://alban.googlecode.com/svn/${project.svn.path}/nabla/profiles/uml2/common</developerConnection>
+    	<url>https://alban.googlecode.com/svn/${project.svn.path}/nabla/profiles/uml2/common</url>
+    	<tag>HEAD</tag>
     </scm>
+    
     <dependencies>
         <dependency>
             <groupId>org.andromda.profiles.uml2</groupId>
