@@ -81,6 +81,7 @@
                         <phase>generate-test-sources</phase>
                         <goals>
                             <goal>test</goal>
+                            <!--<goal>update</goal>-->
                         </goals>
                         <configuration>
                             <actualDirectory>${project.build.directory}/cartridge-test/actualUML2</actualDirectory>
