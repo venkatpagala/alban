@@ -94,44 +94,6 @@
 	
         <profiles>
 		<profile>
-			<id>local</id>
-            		<activation>            			
-			    <property>
-			    	<name>profile.activation</name>
-			    </property>
-			    <!--
-            		    <activeByDefault>true</activeByDefault>
-            		    <file>
-            		        <exists>${basedir}</exists>
-            		    </file>
-            		    -->
-            		</activation>
-			<distributionManagement>
-				<repository>
-					<id>local-releases</id>
-					<name>Internal Release Repository</name>
-					<url>${project.distributionManagement.repository.url}/releases/</url>
-					<!--<uniqueVersion>false</uniqueVersion> -->
-				</repository>
-				<snapshotRepository>
-					<id>local-snapshots</id>
-					<name>Internal Snapshot Repository</name>
-					<url>${project.distributionManagement.repository.url}/snapshots/</url>
-					<!--<uniqueVersion>false</uniqueVersion> -->
-				</snapshotRepository>
-				<site>
-					<id>website</id>
-					<name>Project Website</name>
-					<!--
-						<url>scp://${site.server}/${home.dir}/fullsite/site-deploy</url>
-						<url>file:/var/www/docs</url>
-					-->
-					<!--<url>file://${deploy.dir}</url>-->
-					<url>file:/tmp</url>
-				</site>
-			</distributionManagement>
-		</profile>
-		<profile>
 			<!--Profile configuration for server builds -->
 			<id>server</id>
 			<activation>
