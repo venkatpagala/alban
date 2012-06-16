@@ -184,28 +184,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-			        <!--
-				<plugin>
-					<groupId>org.andromda.maven.plugins</groupId>
-					<artifactId>andromda-multi-source-plugin</artifactId>
-					<version>${andromda.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>add-source</goal>
-							</goals>
-							<configuration>
-								<sourceDirectories>
-									<directory>${maven.build.src}/main/java</directory>
-									<directory>${maven.build.src}/main/resources</directory>
-									<directory>${maven.build.src}/main/dictionaries</directory>
-									<directory>${maven.build.src}/main/xml</directory>
-								</sourceDirectories>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				-->
 				<plugin>
 					<groupId>org.andromda.maven.plugins</groupId>
 					<artifactId>andromda-maven-plugin</artifactId>
@@ -214,7 +192,7 @@
 						<execution>
 						        <phase>generate-sources</phase>
 							<goals>
-								<goal>export2emf</goal>
+								<!--<goal>export2emf</goal>-->
 								<goal>run</goal>
 							</goals>
 							<configuration>
