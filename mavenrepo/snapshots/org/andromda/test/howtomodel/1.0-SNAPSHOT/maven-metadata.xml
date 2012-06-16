@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.andromda.test</groupId>
+  <artifactId>howtomodel</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20120616.212250</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20120616212250</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20120616.212250-1</value>
+        <updated>20120616212250</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
