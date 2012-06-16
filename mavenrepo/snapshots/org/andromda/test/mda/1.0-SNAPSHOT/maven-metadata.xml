@@ -15,6 +15,12 @@
         <value>1.0-20120616.212519-1</value>
         <updated>20120616212519</updated>
       </snapshotVersion>
+      <snapshotVersion>
+        <classifier>site</classifier>
+        <extension>xml</extension>
+        <value>1.0-20120616.212519-1</value>
+        <updated>20120616212519</updated>
+      </snapshotVersion>
     </snapshotVersions>
   </versioning>
 </metadata>
