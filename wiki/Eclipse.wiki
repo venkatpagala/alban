@@ -49,7 +49,7 @@ http://marketplace.eclipse.org/
 
 Plugins on Marketplace are :
   * JBoss Tools
-  * Subclipse (beta)
+  * Subversive (Subclipse beta does not work)
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
@@ -78,7 +78,7 @@ Help > Eclipse Marketplace...
 http://marketplace.eclipse.org/
 
 Plugins on Marketplace are :
-  * CMake
+  * CMakeEd : http://cmakeed.sourceforge.net/eclipse/
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
