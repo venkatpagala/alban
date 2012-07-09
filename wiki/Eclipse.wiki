@@ -49,7 +49,7 @@ http://marketplace.eclipse.org/
 
 Plugins on Marketplace are :
   * JBoss Tools
-  * Subversive (Subclipse beta does not work)
+  * Subversive with SVNKit (Subclipse beta does not work)
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
