@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven2-moduleset>
+  <actions/>
+  <description>Main Project Settings</description>
+  <project-properties class="java.util.concurrent.ConcurrentHashMap">
+    <entry>
+      <string>blockBuildWhenDownstreamBuilding</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-disk_usage-DiskUsageProperty</string>
+      <base-property>
+        <originalValue class="hudson.plugins.disk_usage.DiskUsageProperty"/>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>logRotator</string>
+      <log-rotator-property>
+        <originalValue class="hudson.tasks.LogRotator">
+          <daysToKeep>-1</daysToKeep>
+          <numToKeep>3</numToKeep>
+          <artifactDaysToKeep>-1</artifactDaysToKeep>
+          <artifactNumToKeep>-1</artifactNumToKeep>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </log-rotator-property>
+    </entry>
+    <entry>
+      <string>org-hudsonci-plugins-snapshotmonitor-WatchedDependenciesProperty</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-googlecode-GoogleCodeProjectProperty</string>
+      <base-property>
+        <originalValue class="hudson.plugins.googlecode.GoogleCodeProjectProperty">
+          <googlecodeWebsite>http://code.google.com/p/alban/</googlecodeWebsite>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-backlog-BacklogProjectProperty</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-jira-JiraProjectProperty</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>blockBuildWhenUpstreamBuilding</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
+    </entry>
+    <entry>
+      <string>scmCheckoutRetryCount</string>
+      <integer-property>
+        <propertyOverridden>false</propertyOverridden>
+      </integer-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-promoted_builds-JobPropertyImpl</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>cleanWorkspaceRequired</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
+    </entry>
+    <entry>
+      <string>parametersDefinitionProperties</string>
+      <copy-write-list-property>
+        <originalValue class="hudson.util.CopyOnWriteList"/>
+        <propertyOverridden>false</propertyOverridden>
+      </copy-write-list-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-batch_task-BatchTaskProperty</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>quietPeriod</string>
+      <integer-property>
+        <propertyOverridden>false</propertyOverridden>
+      </integer-property>
+    </entry>
+    <entry>
+      <string>hudson-triggers-SCMTrigger</string>
+      <trigger-property>
+        <originalValue class="hudson.triggers.SCMTrigger">
+          <spec>@hourly</spec>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </trigger-property>
+    </entry>
+    <entry>
+      <string>concurrentBuild</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
+    </entry>
+    <entry>
+      <string>jdk</string>
+      <string-property>
+        <propertyOverridden>false</propertyOverridden>
+      </string-property>
+    </entry>
+    <entry>
+      <string>appointedNode</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
+      <string>com-tombrus-hudson-dostrigger-DosTrigger</string>
+      <trigger-property>
+        <propertyOverridden>false</propertyOverridden>
+      </trigger-property>
+    </entry>
+    <entry>
+      <string>scm</string>
+      <scm-property>
+        <originalValue class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
+          <locations>
+            <hudson.scm.SubversionSCM_-ModuleLocation>
+              <remote>https://alban.googlecode.com/svn/trunk</remote>
+              <local>.</local>
+              <depthOption>infinity</depthOption>
+              <ignoreExternalsOption>false</ignoreExternalsOption>
+            </hudson.scm.SubversionSCM_-ModuleLocation>
+          </locations>
+          <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
+          <excludedRegions></excludedRegions>
+          <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+          <directory>trunk</directory>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </scm-property>
+    </entry>
+    <entry>
+      <string>hudson-triggers-TimerTrigger</string>
+      <trigger-property>
+        <originalValue class="hudson.triggers.TimerTrigger">
+          <spec>@weekly</spec>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </trigger-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-svn_release_mgr-JobPropertyImpl</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+  </project-properties>
+  <keepDependencies>false</keepDependencies>
+  <creationTime>1340825655532</creationTime>
+  <properties/>
+  <cascadingChildrenNames class="java.util.concurrent.CopyOnWriteArraySet"/>
+  <cascading-job-properties class="java.util.concurrent.CopyOnWriteArraySet">
+    <string>hudson-plugins-disk_usage-DiskUsageProperty</string>
+    <string>hudson-plugins-googlecode-GoogleCodeProjectProperty</string>
+    <string>hudson-plugins-backlog-BacklogProjectProperty</string>
+    <string>hudson-plugins-batch_task-BatchTaskProperty</string>
+    <string>hudson-plugins-jira-JiraProjectProperty</string>
+    <string>org-hudsonci-plugins-snapshotmonitor-WatchedDependenciesProperty</string>
+    <string>hudson-plugins-promoted_builds-JobPropertyImpl</string>
+    <string>hudson-plugins-svn_release_mgr-JobPropertyImpl</string>
+  </cascading-job-properties>
+  <scm class="hudson.scm.SubversionSCM">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>https://alban-pc/svn/repo/main/user/trunk</remote>
+        <ignoreExternalsOption>false</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+    <useUpdate>true</useUpdate>
+    <doRevert>false</doRevert>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+  <rootModule>
+    <groupId>com.nabla</groupId>
+    <artifactId>users</artifactId>
+  </rootModule>
+  <goals>clean jalopy:format install site site:deploy -Psite-light</goals>
+  <mavenOpts>-Xms256m -Xmx700m</mavenOpts>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
+  <incrementalBuild>false</incrementalBuild>
+  <usePrivateRepository>false</usePrivateRepository>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <archivingDisabled>false</archivingDisabled>
+  <resolveDependencies>false</resolveDependencies>
+  <processPlugins>false</processPlugins>
+  <mavenValidationLevel>0</mavenValidationLevel>
+  <reporters/>
+  <publishers>
+    <hudson.plugins.dependencyanalyzer.DependencyAnalyzerPublisher/>
+    <gcal.gcalPublisher>
+      <serviceURL>http://www.google.com/calendar/</serviceURL>
+      <calendarID>nabla.mobi_ohffnpi8mc454tps5nso9l8o5g@group.calendar.google.com</calendarID>
+      <url>http://www.google.com/calendar/feeds/nabla.mobi_ohffnpi8mc454tps5nso9l8o5g@group.calendar.google.com/private/full</url>
+      <login>alban.andrieu@nabla.mobi</login>
+      <password>key=7$</password>
+      <statusToPublish>Failures</statusToPublish>
+    </gcal.gcalPublisher>
+    <hudson.maven.RedeployPublisher>
+      <id></id>
+      <url>file://localhost/C:\apache-archiva-1.3\data\repositories\internal</url>
+      <uniqueVersion>false</uniqueVersion>
+      <evenIfUnstable>false</evenIfUnstable>
+    </hudson.maven.RedeployPublisher>
+  </publishers>
+  <buildWrappers/>
+</maven2-moduleset>

@@ -18,6 +18,12 @@
       </base-property>
     </entry>
     <entry>
+      <string>org-hudsonci-plugins-snapshotmonitor-WatchedDependenciesProperty</string>
+      <base-property>
+        <propertyOverridden>false</propertyOverridden>
+      </base-property>
+    </entry>
+    <entry>
       <string>logRotator</string>
       <log-rotator-property>
         <originalValue class="hudson.tasks.LogRotator">
@@ -30,7 +36,7 @@
       </log-rotator-property>
     </entry>
     <entry>
-      <string>org-hudsonci-plugins-snapshotmonitor-WatchedDependenciesProperty</string>
+      <string>hudson-plugins-backlog-BacklogProjectProperty</string>
       <base-property>
         <propertyOverridden>false</propertyOverridden>
       </base-property>
@@ -45,23 +51,10 @@
       </base-property>
     </entry>
     <entry>
-      <string>hudson-plugins-backlog-BacklogProjectProperty</string>
-      <base-property>
-        <propertyOverridden>false</propertyOverridden>
-      </base-property>
-    </entry>
-    <entry>
       <string>hudson-plugins-jira-JiraProjectProperty</string>
       <base-property>
         <propertyOverridden>false</propertyOverridden>
       </base-property>
-    </entry>
-    <entry>
-      <string>blockBuildWhenUpstreamBuilding</string>
-      <boolean-property>
-        <originalValue class="boolean">false</originalValue>
-        <propertyOverridden>false</propertyOverridden>
-      </boolean-property>
     </entry>
     <entry>
       <string>scmCheckoutRetryCount</string>
@@ -69,6 +62,13 @@
         <originalValue class="int">3</originalValue>
         <propertyOverridden>false</propertyOverridden>
       </integer-property>
+    </entry>
+    <entry>
+      <string>blockBuildWhenUpstreamBuilding</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
     </entry>
     <entry>
       <string>hudson-plugins-promoted_builds-JobPropertyImpl</string>
@@ -108,6 +108,13 @@
       </integer-property>
     </entry>
     <entry>
+      <string>hudson-tasks-BuildTrigger</string>
+      <external-property>
+        <propertyOverridden>false</propertyOverridden>
+        <modified>false</modified>
+      </external-property>
+    </entry>
+    <entry>
       <string>hudson-triggers-SCMTrigger</string>
       <trigger-property>
         <originalValue class="hudson.triggers.SCMTrigger">
@@ -117,11 +124,10 @@
       </trigger-property>
     </entry>
     <entry>
-      <string>hudson-tasks-BuildTrigger</string>
-      <external-property>
+      <string>jdk</string>
+      <string-property>
         <propertyOverridden>false</propertyOverridden>
-        <modified>false</modified>
-      </external-property>
+      </string-property>
     </entry>
     <entry>
       <string>concurrentBuild</string>
@@ -129,12 +135,6 @@
         <originalValue class="boolean">false</originalValue>
         <propertyOverridden>false</propertyOverridden>
       </boolean-property>
-    </entry>
-    <entry>
-      <string>jdk</string>
-      <string-property>
-        <propertyOverridden>false</propertyOverridden>
-      </string-property>
     </entry>
     <entry>
       <string>appointedNode</string>
@@ -207,7 +207,7 @@
     <groupId>com.nabla.project</groupId>
     <artifactId>project</artifactId>
   </rootModule>
-  <goals>clean install site -Pmaven-2-site</goals>
+  <goals>clean install site -Psample, maven-2-site</goals>
   <defaultGoals>install</defaultGoals>
   <mavenOpts>-Xms256m -Xmx1024m</mavenOpts>
   <aggregatorStyleBuild>false</aggregatorStyleBuild>

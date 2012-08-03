@@ -35,14 +35,120 @@
     </hudson.model.AllView>
     <listView>
       <owner class="hudson" reference="../../.."/>
+      <name>C++</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>BackEnd-Apps</string>
+        <string>BackEnd-Common</string>
+        <string>BackEnd-Configuration</string>
+        <string>BackEnd-FungibleRevaluation</string>
+        <string>BackEnd-Infra</string>
+        <string>BackEnd-Position</string>
+        <string>BackEnd-Tools</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Java GUI</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+        <string>J2ee</string>
+        <string>Presentation Server</string>
+        <string>Presentation Server Sample</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Java BackEnd</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+        <string>BackEnd Application</string>
+        <string>BackEnd Common</string>
+        <string>BackEnd Presentation Business</string>
+        <string>BackEnd Presentation Common</string>
+        <string>BackEnd Service</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Main</name>
+      <filterExecutors>true</filterExecutors>
+      <filterQueue>true</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>BackEnd Plugins</string>
+        <string>Build Tools</string>
+        <string>Cygwin Environment Settings</string>
+        <string>Main Project Settings</string>
+        <string>Nabla Main Project Settings</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn/>
+        <org.tomfolga.PomModulesShortColumn>
+          <columnName>Maven Modules (Short)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesShortColumn>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
       <name>Nabla</name>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Nabla Cygwin Environment Settings</string>
         <string>Nabla Databases</string>
         <string>Nabla Main</string>
+        <string>Nabla Main Project Settings</string>
         <string>Nabla UML</string>
+        <string>Nabla-CMake-Bat</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -78,6 +184,45 @@
         </org.tomfolga.PomModulesFullColumn>
       </columns>
     </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>MDA</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>BackEnd Businessobjects MDA</string>
+        <string>BackEnd Cartdridge MDA</string>
+        <string>BackEnd Common MDA</string>
+        <string>BackEnd Rules MDA</string>
+        <string>BackEnd Staticdata MDA</string>
+        <string>BackEnd Validation MDA</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn/>
+        <org.tomfolga.PomModulesShortColumn>
+          <columnName>Maven Modules (Short)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesShortColumn>
+        <org.tomfolga.PomModulesFullColumn>
+          <columnName>Maven Modules (Full)</columnName>
+          <showGroupId>true</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesFullColumn>
+      </columns>
+    </listView>
     <hudson.plugins.view.dashboard.Dashboard>
       <owner class="hudson" reference="../../.."/>
       <name>Nabla Dashboard</name>
@@ -85,9 +230,13 @@
       <filterQueue>false</filterQueue>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Nabla Cygwin Environment Settings</string>
         <string>Nabla Databases</string>
         <string>Nabla Main</string>
+        <string>Nabla Main Project Settings</string>
         <string>Nabla UML</string>
+        <string>Nabla-CMake</string>
+        <string>Nabla-CMake-Bat</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -133,115 +282,170 @@
       <rightPortletWidth>50%</rightPortletWidth>
       <leftPortlets>
         <hudson.plugins.cobertura.dashboard.CoverageTablePortlet>
-          <id>dashboard_portlet_4</id>
+          <id>dashboard_portlet_22</id>
           <name>Code Coverages</name>
         </hudson.plugins.cobertura.dashboard.CoverageTablePortlet>
         <hudson.plugins.view.dashboard.test.TestTrendChart>
-          <id>dashboard_portlet_5</id>
+          <id>dashboard_portlet_23</id>
           <name>Test Trend Chart</name>
           <graphWidth>300</graphWidth>
           <graphHeight>220</graphHeight>
           <dateRange>0</dateRange>
         </hudson.plugins.view.dashboard.test.TestTrendChart>
         <hudson.plugins.view.dashboard.test.TestStatisticsChart>
-          <id>dashboard_portlet_6</id>
+          <id>dashboard_portlet_24</id>
           <name>Test Statistics Chart</name>
         </hudson.plugins.view.dashboard.test.TestStatisticsChart>
         <hudson.plugins.view.dashboard.test.TestStatisticsPortlet>
-          <id>dashboard_portlet_7</id>
+          <id>dashboard_portlet_25</id>
           <name>Test Statistics Grid</name>
         </hudson.plugins.view.dashboard.test.TestStatisticsPortlet>
         <hudson.plugins.emma.portlet.grid.EmmaBuilderGrid>
-          <id>dashboard_portlet_8</id>
+          <id>dashboard_portlet_26</id>
           <name>Emma Coverage Statistics Grid</name>
         </hudson.plugins.emma.portlet.grid.EmmaBuilderGrid>
       </leftPortlets>
       <rightPortlets>
         <hudson.plugins.analysis.collector.dashboard.WarningsNewVersusFixedGraphPortlet>
-          <id>dashboard_portlet_9</id>
+          <id>dashboard_portlet_27</id>
           <name>Warnings trend graph (new vs. fixed)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.analysis.collector.dashboard.WarningsNewVersusFixedGraphPortlet>
         <hudson.plugins.analysis.collector.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_10</id>
+          <id>dashboard_portlet_28</id>
           <name>Warnings trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.analysis.collector.dashboard.WarningsPriorityGraphPortlet>
         <hudson.plugins.checkstyle.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_11</id>
+          <id>dashboard_portlet_29</id>
           <name>Checkstyle warnings trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.checkstyle.dashboard.WarningsPriorityGraphPortlet>
         <hudson.plugins.dry.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_12</id>
+          <id>dashboard_portlet_30</id>
           <name>Duplicate code trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.dry.dashboard.WarningsPriorityGraphPortlet>
         <hudson.plugins.findbugs.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_13</id>
+          <id>dashboard_portlet_31</id>
           <name>FindBugs warnings trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.findbugs.dashboard.WarningsPriorityGraphPortlet>
         <hudson.plugins.pmd.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_14</id>
+          <id>dashboard_portlet_32</id>
           <name>PMD warnings trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
         </hudson.plugins.pmd.dashboard.WarningsPriorityGraphPortlet>
         <hudson.plugins.warnings.dashboard.WarningsNewVersusFixedGraphPortlet>
-          <id>dashboard_portlet_15</id>
+          <id>dashboard_portlet_33</id>
           <name>Compiler warnings trend graph (new vs. fixed)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
+          <actionSelector>
+            <parserName>AcuCobol Compiler</parserName>
+          </actionSelector>
         </hudson.plugins.warnings.dashboard.WarningsNewVersusFixedGraphPortlet>
         <hudson.plugins.warnings.dashboard.WarningsPriorityGraphPortlet>
-          <id>dashboard_portlet_16</id>
+          <id>dashboard_portlet_34</id>
           <name>Compiler warnings trend graph (priority distribution)</name>
           <width>500</width>
           <height>200</height>
           <dayCountString>30</dayCountString>
+          <actionSelector>
+            <parserName>AcuCobol Compiler</parserName>
+          </actionSelector>
         </hudson.plugins.warnings.dashboard.WarningsPriorityGraphPortlet>
       </rightPortlets>
       <topPortlets>
         <hudson.plugins.view.dashboard.core.UnstableJobsPortlet>
-          <id>dashboard_portlet_1</id>
+          <id>dashboard_portlet_19</id>
           <name>Unstable Jobs</name>
         </hudson.plugins.view.dashboard.core.UnstableJobsPortlet>
         <hudson.plugins.view.dashboard.stats.StatBuilds>
-          <id>dashboard_portlet_2</id>
+          <id>dashboard_portlet_20</id>
           <name>Build statistics</name>
         </hudson.plugins.view.dashboard.stats.StatBuilds>
         <hudson.plugins.view.dashboard.core.JobsPortlet>
-          <id>dashboard_portlet_3</id>
+          <id>dashboard_portlet_21</id>
           <name>Jobs Grid</name>
         </hudson.plugins.view.dashboard.core.JobsPortlet>
       </topPortlets>
       <bottomPortlets>
         <hudson.plugins.view.dashboard.builds.LatestBuilds>
-          <id>dashboard_portlet_17</id>
+          <id>dashboard_portlet_35</id>
           <name>Latest builds</name>
           <numBuilds>10</numBuilds>
         </hudson.plugins.view.dashboard.builds.LatestBuilds>
         <hudson.plugins.view.dashboard.stats.StatJobs>
-          <id>dashboard_portlet_18</id>
+          <id>dashboard_portlet_36</id>
           <name>Job statistics</name>
         </hudson.plugins.view.dashboard.stats.StatJobs>
       </bottomPortlets>
     </hudson.plugins.view.dashboard.Dashboard>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Thirdparty</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Boost</string>
+        <string>Corba</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn/>
+        <org.tomfolga.PomModulesShortColumn>
+          <columnName>Maven Modules (Short)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesShortColumn>
+        <org.tomfolga.PomModulesVersionColumn>
+          <columnName>Maven Modules (Version)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>false</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesVersionColumn>
+        <org.tomfolga.PomDependenciesWithinGroupIdColumn>
+          <onlyWithinGroupId>true</onlyWithinGroupId>
+          <columnName>Maven Dependencies (within groupId)</columnName>
+        </org.tomfolga.PomDependenciesWithinGroupIdColumn>
+        <org.tomfolga.PomDependenciesColumn>
+          <onlyWithinGroupId>false</onlyWithinGroupId>
+          <columnName>Maven Dependencies</columnName>
+        </org.tomfolga.PomDependenciesColumn>
+        <org.tomfolga.PomModulesFullColumn>
+          <columnName>Maven Modules (Full)</columnName>
+          <showGroupId>true</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesFullColumn>
+      </columns>
+    </listView>
   </views>
-  <primaryView>Tous</primaryView>
+  <primaryView>Nabla Dashboard</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
   <nodeProperties/>
@@ -251,7 +455,7 @@
         <unserializable-parents/>
         <tree-map>
           <default>
-            <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../../../../views/hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+            <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../../../../views/listView[7]/jobNames/comparator"/>
           </default>
           <int>11</int>
           <string>ANT_HOME</string>
