@@ -123,7 +123,7 @@ set PATH=C:\eclipse-3.5\plugins\org.eclipse.tptp.platform.ac.win_ia32_4.4.202.v2
 rem set PROFILER_AGENT=-XrunpiAgent:server=enabled
 
 :RESTART
-"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" %PROFILER_AGENT% -classpath "%JBOSS_CLASSPATH%" org.jboss.Main %*
+"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" %PROFILER_AGENT% -classpath "%JBOSS_CLASSPATH%" org.jboss.Main -c hudson %*
 if ERRORLEVEL 10 goto RESTART
 
 :END
