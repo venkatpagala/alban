@@ -4,10 +4,9 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
 
     <!-- Appender for all messages -->
-    <appender name="CONSOLE-ALL2" class="org.apache.log4j.ConsoleAppender">
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
         <param name="Target" value="System.out"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <!-- webapp is defined in KiWIMainServlet -->
             <param name="ConversionPattern" value="LATEST %d{ABSOLUTE} %-5p[%c] %m%n"/>
         </layout>
     </appender>
@@ -17,7 +16,6 @@
         <param name="MaxBackupIndex" value="3"/>
         <param name="file" value="/tmp/project.log"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <!-- webapp is defined in KiWIMainServlet -->
             <param name="ConversionPattern" value="%d [%7r]%x %6p - %30.30c - %m%n"/>
             <!-- The full pattern: Date MS Priority [Category] (Thread:NDC) Message\n
                 <param name="ConversionPattern" value="%d %-5r %-5p [%c] (%t:%x) %m%n"/>
@@ -25,7 +23,7 @@
         </layout>
     </appender>
 
-   <appender name="SOCKET" class="org.apache.log4j.net.SocketAppender">
+   <appender name="SOCKETSERV" class="org.apache.log4j.net.SocketAppender">
       <param name="Port" value="4445"/>
       <param name="RemoteHost" value="localhost"/>
       <param name="ReconnectionDelay" value="60000"/>
@@ -41,29 +39,27 @@
     <!-- ======================= -->
     <root>
         <priority value="DEBUG"/>
-        <!-- To log all messages uncomment the appender CONSOLE-ALL -->
-        <appender-ref ref="CONSOLE-ALL2"/>
+        <!-- To log all messages uncomment the appender CONSOLE -->
+        <appender-ref ref="CONSOLE"/>
         <!-- To log debug messages only, uncomment the following appender -->
         <appender-ref ref="FILE"/>
         <!-- To log on chainsaw, uncomment the following appender -->
-        <appender-ref ref="SOCKET"/>
+        <appender-ref ref="SOCKETSERV"/>
     </root>
 
     <!-- ================ -->
     <!-- Limit categories -->
     <!-- ================ -->
+    <!--
     <category name="com" additivity="false">
         <priority value="INFO"/>
-        <appender-ref ref="CONSOLE-ALL2"/>
+        <appender-ref ref="CONSOLE"/>
     </category>
-    <category name="kiwi" additivity="false">
-        <priority value="INFO"/>
-        <appender-ref ref="CONSOLE-ALL2"/>
-    </category>
+    -->
 
     <category name="org.apache.jasper" additivity="false">
         <priority value="INFO"/>
-        <appender-ref ref="CONSOLE-ALL2"/>
+        <appender-ref ref="CONSOLE"/>
     </category>
 
  </log4j:configuration>
