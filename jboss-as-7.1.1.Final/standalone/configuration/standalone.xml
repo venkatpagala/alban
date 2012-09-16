@@ -101,7 +101,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jta="true" jndi-name="java:/timetracker-gui" pool-name="timetracker-gui" enabled="true" use-java-context="true" use-ccm="true">
+                <datasource jta="true" jndi-name="java:jboss/datasources/timetracker-gui" pool-name="timetracker-gui" enabled="true" use-java-context="true" use-ccm="true">
                     <connection-url>jdbc:h2:~/timetracker-gui;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
                     <driver>h2</driver>
                     <security>
@@ -109,7 +109,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jta="true" jndi-name="java:/timetracker-hibernate" pool-name="timetracker-hibernate" enabled="true" use-java-context="true" use-ccm="true">
+                <datasource jta="true" jndi-name="java:jboss/datasources/timetracker-hibernate" pool-name="timetracker-hibernate" enabled="true" use-java-context="true" use-ccm="true">
                     <connection-url>jdbc:h2:~/timetracker-hibernate;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
                     <driver>h2</driver>
                     <security>
@@ -117,7 +117,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jta="true" jndi-name="java:/timetracker-ejb3" pool-name="timetracker-ejb3" enabled="true" use-java-context="true" use-ccm="true">
+                <datasource jta="true" jndi-name="java:jboss/datasources/timetracker-ejb3" pool-name="timetracker-ejb3" enabled="true" use-java-context="true" use-ccm="true">
                     <connection-url>jdbc:h2:~/timetracker-ejb3;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
                     <driver>h2</driver>
                     <security>
