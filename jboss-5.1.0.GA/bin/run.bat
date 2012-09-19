@@ -44,9 +44,8 @@ if "x%JAVA_OPTS%" == "x" (
   set "JAVA_OPTS=-Dprogram.name=%PROGNAME%"
 ) else (
   set "JAVA_OPTS=-Dprogram.name=%PROGNAME% %JAVA_OPTS%"
-)
-
-if "x%JAVA_HOME%" == "x" (
+)
+if "x%JAVA_HOME%" == "x" (
   set  JAVA=java
   echo JAVA_HOME is not set. Unexpected results may occur.
   echo Set JAVA_HOME to the directory of your local JDK to avoid this message.

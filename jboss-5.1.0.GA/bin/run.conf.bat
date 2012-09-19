@@ -40,10 +40,8 @@ rem # options that are always passed by run.bat.
 rem #
 
 rem # JVM memory allocation pool parameters - modify as appropriate.
-rem set "JAVA_OPTS=-Xms128M -Xmx512M -XX:MaxPermSize=256M"
-set "JAVA_OPTS=-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512"
-
-rem # Reduce the RMI GCs to once per hour for Sun JVMs.
+rem set "JAVA_OPTS=-Xms128M -Xmx512M -XX:MaxPermSize=256M"set "JAVA_OPTS=-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512"
+rem # Reduce the RMI GCs to once per hour for Sun JVMs.
 set "JAVA_OPTS=%JAVA_OPTS% -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"
 
 rem # Warn when resolving remote XML DTDs or schemas.
