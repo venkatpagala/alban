@@ -86,6 +86,7 @@ Help > Install New Software...
 Plugins links are :
   * SConsolidator - http://www.sconsolidator.com/update (http://scons.org/wiki/EclipsePlugin)
   * Python Dev - http://pydev.org/updates
+  * EPIC Perl - http://e-p-i-c.sf.net/updates 
 
 = Settings =
 
