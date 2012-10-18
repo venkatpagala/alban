@@ -1,4 +1,4 @@
-#How to setup VirtualBox.
+#How to install VirtualBox.
 
 = Introduction =
 
