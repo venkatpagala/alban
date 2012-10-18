@@ -1,5 +1,5 @@
+#summary Building and deploying the Nabla Application on GlassFish.
 #labels Phase-Deploy
-#Building and deploying the Nabla Application on GlassFish.
 
 = Introduction =
 
