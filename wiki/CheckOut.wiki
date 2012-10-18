@@ -1,4 +1,4 @@
-#How to check out this project.
+#summary How to check out this project.
 
 = Introduction =
 
