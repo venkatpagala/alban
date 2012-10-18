@@ -1,5 +1,5 @@
+#summary Simple C++ Project with CMake.
 #labels Phase-Requirements,Phase-Implementation
-#Simple C++ Project with CMake.
 
 = Introduction =
 
