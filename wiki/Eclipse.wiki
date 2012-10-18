@@ -1,4 +1,4 @@
-#How to install eclipse.
+#summary How to install eclipse.
 
 = Introduction =
 
