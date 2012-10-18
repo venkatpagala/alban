@@ -1,5 +1,5 @@
+#summary HowToModel sample.
 #labels Phase-Support
-#HowToModel sample.
 
 = Introduction =
 
