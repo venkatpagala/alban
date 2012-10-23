@@ -1,0 +1,11 @@
+#summary Get the latest version.
+
+= Introduction =
+
+Artifacts cab be found [http://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/artifact here]:
+  * [http://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/artifact/target/todo.war todo.war]
+
+= Build robots =
+
+Jenkins is used to build our application:
+  * https://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/
