@@ -3,7 +3,7 @@
 = Introduction =
 
 Artifacts cab be found [http://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/artifact here]:
-  * [http://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/artifact/target/todo.war todo.war]
+  * [http://nabla.ci.cloudbees.com/job/nabla-demo/lastStableBuild/artifact/servers/sample/gwt-kitchensink/target/gwt-kitchensink.war gwt-kitchensink.war]
 
 = Build robots =
 
