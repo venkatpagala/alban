@@ -10,7 +10,12 @@ See
 [http://code.google.com/p/alban/source/checkout Source]
 
 {{{
-svn co svn:https://alban.googlecode.com/svn/trunk/ --depth empty
+svn co https://alban.googlecode.com/svn/trunk/ . --depth empty
+svn up env
+svn up .vnc
+svn up .bashrc
+svn up .cshrc
+svn up .subversion
 }}}
 
 = Ubuntu =
@@ -19,7 +24,7 @@ svn co svn:https://alban.googlecode.com/svn/trunk/ --depth empty
 
 {{{
 cd /
-mkdir -p /workspace/users/albandri
+mkdir -p /workspace/users/albandri10
 sudo chown albandri.root workspace
 sudo apt-get install xxdiff nis ntp autofs tcsh libssl log4cxx curl
 sudo apt-get autoremove
