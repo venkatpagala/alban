@@ -31,7 +31,8 @@ sudo gedit /etc/passwd
 
 {{{
 cd /
-mkdir -p /workspace/users/albandri10
+sudo mkdir repo
+sudo mkdir -p /workspace/users/albandri10
 cd /workspace/users/
 sudo chown -R albandri.root albandri10/
 
