@@ -4,6 +4,15 @@
 
 = Jenkins =
 
+== Ubuntu ==
+
+Install Jenkins on ubuntu
+
+{{{
+sudo groupadd build
+sudo useradd --create-home --shell /bin/bash --groups build jenkins
+}}}
+
 = Hudson =
 
 How to use Hudson for Nabla project..
