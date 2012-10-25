@@ -32,7 +32,9 @@ sudo gedit /etc/passwd
 {{{
 cd /
 mkdir -p /workspace/users/albandri10
-sudo chown albandri.root workspace
+cd /workspace/users/
+sudo chown albandri.root albandri10/
+
 sudo apt-get install xxdiff nis ntp autofs tcsh libssl log4cxx curl
 sudo apt-get install fuse libfuse2 libfuse-dev build-essential cifs-utils
 sudo apt-get autoremove
