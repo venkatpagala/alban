@@ -20,6 +20,13 @@ svn up .subversion
 
 = Ubuntu =
 
+
+{{{
+sudo adduser albandri
+sudo gedit /etc/passwd
+#change /home/albandri by /workspace/users/albandri10
+}}}
+
 == Prepare workspace == 
 
 {{{
