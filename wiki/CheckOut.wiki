@@ -12,3 +12,19 @@ See
 {{{
 svn co svn:https://alban.googlecode.com/svn/trunk/ --depth empty
 }}}
+
+= Ubuntu =
+
+== Prepare workspace == 
+
+{{{
+cd /
+mkdir -p /workspace/users/albandri
+sudo chown albandri.root workspace
+sudo apt-get install xxdiff nis ntp autofs tcsh libssl log4cxx curl
+sudo apt-get autoremove
+}}}
+
+== Install Maven 3 == 
+
+[http://yarovoy.com/post/14363197336/maven-how-to-install-maven-3-on-ubuntu-11-10 maven-3-install]
