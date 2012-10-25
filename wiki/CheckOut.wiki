@@ -27,7 +27,29 @@ cd /
 mkdir -p /workspace/users/albandri10
 sudo chown albandri.root workspace
 sudo apt-get install xxdiff nis ntp autofs tcsh libssl log4cxx curl
+sudo apt-get install fuse libfuse2 libfuse-dev build-essential cifs-utils
 sudo apt-get autoremove
+}}}
+
+== How to grant yourself sudoer rights == 
+
+The sudo command allow to temparily elevate your privilege to execute administrative commands. This avoid having to login as root.
+
+Notes: we use visudo to edit */etc/sudoers* because it checks that the change are correct before saving.
+
+{{{
+su – root
+visudo
+}}}
+
+Then add the following line at the end of the file, replacing baplepil by your login. Remarks: this is a tab after your login. (type ':i' to pass in insert mode, then go to the end of the file using arrow key and type the text. Then ESC+':x' to save, or ESC+':q!' to exit and discard.)
+
+albandri ALL=(ALL) NOPASSWD: ALL
+
+or the line below if you prefer input your password each time you do a sudo:
+
+{{{
+albandri ALL=(ALL) ALL
 }}}
 
 == Install Maven 3 == 
