@@ -1,0 +1,10 @@
+#summary How to install Ubuntu.
+
+= Introduction =
+
+Add your content here.
+
+= Details =
+
+Install the following. :
+  * CloneZilla via PXE : [http://wi-phye.com/featured/how-to-setup-clonezilla-on-linux-ubuntu-quick-start-guide/ here]
