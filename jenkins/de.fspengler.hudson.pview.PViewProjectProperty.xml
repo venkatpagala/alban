@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<de.fspengler.hudson.pview.PViewProjectProperty_-DescriptorImpl plugin="hudson-pview-plugin@1.8">
+  <helpRedirect/>
+  <regex>.*</regex>
+  <treeSplitChar>-</treeSplitChar>
+</de.fspengler.hudson.pview.PViewProjectProperty_-DescriptorImpl>

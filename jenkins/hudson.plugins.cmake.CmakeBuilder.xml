@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.cmake.CmakeBuilder_-DescriptorImpl>
+  <cmakePath>C:\Program Files\CMake 2.8\bin\cmake</cmakePath>
+</hudson.plugins.cmake.CmakeBuilder_-DescriptorImpl>

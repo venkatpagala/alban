@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.tasks.Mailer_-DescriptorImpl>
+  <defaultSuffix>@nabla.mobi</defaultSuffix>
+  <hudsonUrl>http://PTXMZ0087.misys.global.ad:8280/jenkins/</hudsonUrl>
+  <adminAddress>alban.andrieu@nabla.mobi</adminAddress>
+  <useSsl>false</useSsl>
+  <charset>UTF-8</charset>
+</hudson.tasks.Mailer_-DescriptorImpl>

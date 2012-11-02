@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.jboss.JBossBuilder_-DescriptorImpl>
+  <servers>
+    <hudson.plugins.jboss.JBossBuilder_-ServerBean>
+      <cmdToStart></cmdToStart>
+      <cmdToShutdown></cmdToShutdown>
+      <address>127.0.0.1</address>
+      <serverName>nabla</serverName>
+      <homeDir>C:\jboss-4.2.2.GA</homeDir>
+      <jndiPort>1099</jndiPort>
+      <timeout>15</timeout>
+      <kind>0</kind>
+    </hudson.plugins.jboss.JBossBuilder_-ServerBean>
+  </servers>
+</hudson.plugins.jboss.JBossBuilder_-DescriptorImpl>

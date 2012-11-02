@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <version>2.2.1</version>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured"/>
+  <securityRealm class="hudson.security.SecurityRealm$None"/>
+  <configuredWorkspaceRoot></configuredWorkspaceRoot>
+  <jdks>
+    <jdk>
+      <name>JDK 6</name>
+      <home>C:\SUN\SDK\jdk1.6.0_33</home>
+      <properties/>
+    </jdk>
+    <jdk>
+      <name>JDK 7</name>
+      <home>C:\SUN\SDK\jdk1.7.0_05</home>
+      <properties/>
+    </jdk>
+  </jdks>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <slaves/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Tous</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+    </hudson.model.AllView>
+    <hudson.model.RadiatorView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nabla</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Nabla-Main-Project</string>
+        <string>Nabla-Nabla-Project</string>
+      </jobNames>
+      <jobFilters/>
+      <columns/>
+      <showStable>false</showStable>
+      <showStableDetail>false</showStableDetail>
+      <highVis>false</highVis>
+      <groupByPrefix>false</groupByPrefix>
+    </hudson.model.RadiatorView>
+  </views>
+  <primaryView>Tous</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties>
+    <hudson.slaves.EnvironmentVariablesNodeProperty>
+      <envVars serialization="custom">
+        <unserializable-parents/>
+        <tree-map>
+          <default>
+            <comparator class="hudson.util.CaseInsensitiveComparator"/>
+          </default>
+          <int>11</int>
+          <string>ANT_HOME</string>
+          <string>C:\apache-ant-1.8.0</string>
+          <string>CYGWIN_HOME</string>
+          <string>C:\cygwin</string>
+          <string>JAVA_HOME</string>
+          <string>C:\SUN\SDK\jdk1.6.0_33</string>
+          <string>JAVA_OPTS</string>
+          <string>-Xms128m -Xmx1024m</string>
+          <string>JBOSS_HOME</string>
+          <string>C:\jboss-4.2.2.GA</string>
+          <string>KPLUS_ROOT</string>
+          <string>C:\thirdparty\kondor</string>
+          <string>LUMBERMILL_HOME</string>
+          <string>C:\lumbermill-2.0-b3</string>
+          <string>MAVEN_HOME</string>
+          <string>C:\apache-maven-3.0.4</string>
+          <string>PROJECT_DEV</string>
+          <string>C:\workspace\users\albandri30\ktpplus</string>
+          <string>PROJECT_OBJ</string>
+          <string>C:\target</string>
+          <string>THIRDPARTY_ROOT</string>
+          <string>C:\thirdparty</string>
+        </tree-map>
+      </envVars>
+    </hudson.slaves.EnvironmentVariablesNodeProperty>
+  </globalNodeProperties>
+  <disabledAdministrativeMonitors>
+    <string>hudson.diagnosis.UpdateCenterChooser</string>
+    <string>OldData</string>
+  </disabledAdministrativeMonitors>
+</hudson>

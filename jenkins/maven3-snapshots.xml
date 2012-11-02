@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.hudsonci.plugins.snapshotmonitor.SnapshotMonitorPlugin>
+  <userName>deployment</userName>
+  <password>key=7$</password>
+</org.hudsonci.plugins.snapshotmonitor.SnapshotMonitorPlugin>

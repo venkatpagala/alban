@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.thalesgroup.hudson.plugins.scons.SConsInstallation_-DescriptorImpl>
+  <installations>
+    <com.thalesgroup.hudson.plugins.scons.SConsInstallation>
+      <name>Scons-2.1.0</name>
+      <home>C:\Python27\Scripts\scons.py</home>
+      <properties/>
+    </com.thalesgroup.hudson.plugins.scons.SConsInstallation>
+  </installations>
+</com.thalesgroup.hudson.plugins.scons.SConsInstallation_-DescriptorImpl>
