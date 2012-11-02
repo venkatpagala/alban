@@ -78,11 +78,12 @@ if "%RUN_CLASSPATH%" == "" set RUN_CLASSPATH=%JBOSS_CLASSPATH%;%RUNJAR%
 
 set JBOSS_CLASSPATH=%RUN_CLASSPATH%
 
-set HUDSON_HOME=C:\hudson
+set JENKINS_HOME=C:\jenkins
+set HUDSON_HOME=C:\jenkins
 set JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxPermSize=256m
 set MAVEN_OPTS=-Xms256m -Xmx1024m -XX:MaxPermSize=256m
 
-rem Setup HUDSON specific properties
+rem Setup JENKINS specific properties
 set JAVA_OPTS=%JAVA_OPTS% -Djava.awt.headless=true
 
 rem Setup JBoss specific properties
@@ -124,7 +125,7 @@ set PATH=C:\eclipse-3.5\plugins\org.eclipse.tptp.platform.ac.win_ia32_4.4.202.v2
 rem set PROFILER_AGENT=-XrunpiAgent:server=enabled
 
 :RESTART
-"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" %PROFILER_AGENT% -classpath "%JBOSS_CLASSPATH%" org.jboss.Main -c hudson %*
+"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" %PROFILER_AGENT% -classpath "%JBOSS_CLASSPATH%" org.jboss.Main -c jenkins %*
 if ERRORLEVEL 10 goto RESTART
 
 :END
