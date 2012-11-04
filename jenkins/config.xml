@@ -38,8 +38,11 @@
       <filterQueue>false</filterQueue>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>Nabla-Main-Project</string>
-        <string>Nabla-Nabla-Project</string>
+        <string>nabla-base</string>
+        <string>nabla-main-continuous</string>
+        <string>nabla-main-integration</string>
+        <string>nabla-main-nightly</string>
+        <string>nabla-main-release</string>
       </jobNames>
       <jobFilters/>
       <columns/>

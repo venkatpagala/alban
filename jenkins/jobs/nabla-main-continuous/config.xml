@@ -208,7 +208,7 @@
       <string>hudson-plugins-covcomplplot-CovComplPlotPublisher</string>
       <external-property>
         <originalValue class="hudson.plugins.covcomplplot.CovComplPlotPublisher">
-          <analyzer>Clover</analyzer>
+          <analyzer>Cobertura</analyzer>
           <verbose>false</verbose>
           <excludeGetterSetter>false</excludeGetterSetter>
           <locateTopMost>true</locateTopMost>
@@ -220,6 +220,10 @@
     <entry>
       <string>org-hudsonci-plugins-snapshotmonitor-SnapshotTrigger</string>
       <trigger-property>
+        <originalValue class="maven-snapshot-trigger">
+          <spec></spec>
+          <excludeInternallyProduced>false</excludeInternallyProduced>
+        </originalValue>
         <propertyOverridden>false</propertyOverridden>
       </trigger-property>
     </entry>
@@ -240,19 +244,8 @@
     <entry>
       <string>hudson-plugins-clover-CloverPublisher</string>
       <external-property>
-        <originalValue class="hudson.plugins.clover.CloverPublisher">
-          <cloverReportDir></cloverReportDir>
-          <cloverReportFileName>clover.xml</cloverReportFileName>
-          <healthyTarget>
-            <methodCoverage>70</methodCoverage>
-            <conditionalCoverage>80</conditionalCoverage>
-            <statementCoverage>80</statementCoverage>
-          </healthyTarget>
-          <unhealthyTarget/>
-          <failingTarget/>
-        </originalValue>
         <propertyOverridden>false</propertyOverridden>
-        <modified>true</modified>
+        <modified>false</modified>
       </external-property>
     </entry>
     <entry>
@@ -264,15 +257,21 @@
     <entry>
       <string>org-hudsonci-plugins-snapshotmonitor-WatchedDependenciesProperty</string>
       <base-property>
+        <originalValue class="watched-dependencies-property"/>
         <propertyOverridden>false</propertyOverridden>
       </base-property>
     </entry>
     <entry>
-      <string>hudson-plugins-javancss-JavaNCSSPublisher</string>
-      <external-property>
+      <string>logRotator</string>
+      <log-rotator-property>
+        <originalValue class="hudson.tasks.LogRotator">
+          <daysToKeep>7</daysToKeep>
+          <numToKeep>3</numToKeep>
+          <artifactDaysToKeep>-1</artifactDaysToKeep>
+          <artifactNumToKeep>-1</artifactNumToKeep>
+        </originalValue>
         <propertyOverridden>false</propertyOverridden>
-        <modified>true</modified>
-      </external-property>
+      </log-rotator-property>
     </entry>
     <entry>
       <string>org-jvnet-hudson-plugins-SSHBuildWrapper</string>
@@ -282,22 +281,10 @@
       </external-property>
     </entry>
     <entry>
-      <string>logRotator</string>
-      <log-rotator-property>
-        <originalValue class="hudson.tasks.LogRotator">
-          <daysToKeep>7</daysToKeep>
-          <numToKeep>3</numToKeep>
-          <artifactDaysToKeep>7</artifactDaysToKeep>
-          <artifactNumToKeep>3</artifactNumToKeep>
-        </originalValue>
-        <propertyOverridden>false</propertyOverridden>
-      </log-rotator-property>
-    </entry>
-    <entry>
-      <string>gcal-gcalPublisher</string>
+      <string>hudson-plugins-javancss-JavaNCSSPublisher</string>
       <external-property>
         <propertyOverridden>false</propertyOverridden>
-        <modified>false</modified>
+        <modified>true</modified>
       </external-property>
     </entry>
     <entry>
@@ -308,6 +295,13 @@
         </originalValue>
         <propertyOverridden>false</propertyOverridden>
       </base-property>
+    </entry>
+    <entry>
+      <string>gcal-gcalPublisher</string>
+      <external-property>
+        <propertyOverridden>false</propertyOverridden>
+        <modified>false</modified>
+      </external-property>
     </entry>
     <entry>
       <string>hudson-plugins-pmd-PmdPublisher</string>
@@ -562,11 +556,10 @@
       </boolean-property>
     </entry>
     <entry>
-      <string>hudson-plugins-git-GitPublisher</string>
-      <external-property>
+      <string>hudson-plugins-promoted_builds-JobPropertyImpl</string>
+      <base-property>
         <propertyOverridden>false</propertyOverridden>
-        <modified>false</modified>
-      </external-property>
+      </base-property>
     </entry>
     <entry>
       <string>org-hudsonci-maven-plugin-dependencymonitor-DependencyNotifier</string>
@@ -579,18 +572,15 @@
       </external-property>
     </entry>
     <entry>
-      <string>hudson-plugins-promoted_builds-JobPropertyImpl</string>
-      <base-property>
+      <string>hudson-plugins-git-GitPublisher</string>
+      <external-property>
         <propertyOverridden>false</propertyOverridden>
-      </base-property>
+        <modified>false</modified>
+      </external-property>
     </entry>
     <entry>
       <string>org-hudsonci-maven-plugin-artifactrecorder-ArtifactArchiver</string>
       <external-property>
-        <originalValue class="maven-artifact-archiver">
-          <includePomArtifacts>true</includePomArtifacts>
-          <deleteOldArchiveArtifacts>true</deleteOldArchiveArtifacts>
-        </originalValue>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
       </external-property>
@@ -603,19 +593,19 @@
       </external-property>
     </entry>
     <entry>
+      <string>cleanWorkspaceRequired</string>
+      <boolean-property>
+        <originalValue class="boolean">false</originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </boolean-property>
+    </entry>
+    <entry>
       <string>hudson-tasks-test-AggregatedTestResultPublisher</string>
       <external-property>
         <originalValue class="hudson.tasks.test.AggregatedTestResultPublisher"/>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
       </external-property>
-    </entry>
-    <entry>
-      <string>cleanWorkspaceRequired</string>
-      <boolean-property>
-        <originalValue class="boolean">true</originalValue>
-        <propertyOverridden>false</propertyOverridden>
-      </boolean-property>
     </entry>
     <entry>
       <string>hudson-tasks-junit-JUnitResultArchiver</string>
@@ -629,6 +619,13 @@
       <external-property>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
+      </external-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-sonar-SonarPublisher</string>
+      <external-property>
+        <propertyOverridden>false</propertyOverridden>
+        <modified>false</modified>
       </external-property>
     </entry>
     <entry>
@@ -668,13 +665,6 @@
       </external-property>
     </entry>
     <entry>
-      <string>hudson-plugins-sonar-SonarPublisher</string>
-      <external-property>
-        <propertyOverridden>false</propertyOverridden>
-        <modified>false</modified>
-      </external-property>
-    </entry>
-    <entry>
       <string>parametersDefinitionProperties</string>
       <copy-write-list-property>
         <originalValue class="hudson.util.CopyOnWriteList"/>
@@ -682,17 +672,17 @@
       </copy-write-list-property>
     </entry>
     <entry>
-      <string>hudson-plugins-plot-PlotPublisher</string>
-      <external-property>
-        <propertyOverridden>false</propertyOverridden>
-        <modified>false</modified>
-      </external-property>
-    </entry>
-    <entry>
       <string>hudson-tasks-JavadocArchiver</string>
       <external-property>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
+      </external-property>
+    </entry>
+    <entry>
+      <string>hudson-plugins-plot-PlotPublisher</string>
+      <external-property>
+        <propertyOverridden>false</propertyOverridden>
+        <modified>false</modified>
       </external-property>
     </entry>
     <entry>
@@ -741,22 +731,22 @@
       </string-property>
     </entry>
     <entry>
-      <string>org-jenkinsci-plugins-dostrigger-DosTrigger</string>
-      <trigger-property>
-        <propertyOverridden>false</propertyOverridden>
-      </trigger-property>
-    </entry>
-    <entry>
       <string>quietPeriod</string>
       <integer-property>
         <propertyOverridden>false</propertyOverridden>
       </integer-property>
     </entry>
     <entry>
+      <string>org-jenkinsci-plugins-dostrigger-DosTrigger</string>
+      <trigger-property>
+        <propertyOverridden>false</propertyOverridden>
+      </trigger-property>
+    </entry>
+    <entry>
       <string>hudson-tasks-BuildTrigger</string>
       <external-property>
         <originalValue class="hudson.tasks.BuildTrigger">
-          <childProjects>nabla-main-integration</childProjects>
+          <childProjects>nabla-base</childProjects>
           <threshold>
             <name>SUCCESS</name>
             <ordinal>0</ordinal>
@@ -812,35 +802,7 @@
           <maven-builder>
             <config>
               <installationId>Maven-3.0.4</installationId>
-              <goals>clover2:setup test clover2:aggregate clover2:clover</goals>
-              <privateRepository>false</privateRepository>
-              <privateTmpdir>false</privateTmpdir>
-              <pomFile>pom.xml</pomFile>
-              <properties>
-                <entries/>
-              </properties>
-              <errors>false</errors>
-              <verbosity>NORMAL</verbosity>
-              <offline>false</offline>
-              <snapshotUpdateMode>NORMAL</snapshotUpdateMode>
-              <profiles>
-                <string>development</string>
-                <string>no-cartridges</string>
-              </profiles>
-              <recursive>true</recursive>
-              <checksumMode>NORMAL</checksumMode>
-              <failMode>NORMAL</failMode>
-              <makeMode>NONE</makeMode>
-              <mavenOpts>-Xms256m -Xmx1024m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
-              <settingsId>NONE</settingsId>
-              <globalSettingsId>NONE</globalSettingsId>
-              <toolChainsId>NONE</toolChainsId>
-            </config>
-          </maven-builder>
-          <maven-builder>
-            <config>
-              <installationId>Maven-3.0.4</installationId>
-              <goals>pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura javancss:report</goals>
+              <goals>pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura</goals>
               <privateRepository>false</privateRepository>
               <privateTmpdir>false</privateTmpdir>
               <pomFile>pom.xml</pomFile>
@@ -855,34 +817,6 @@
                 <string>sample</string>
                 <string>development</string>
                 <string>no-cartridges</string>
-              </profiles>
-              <recursive>true</recursive>
-              <checksumMode>NORMAL</checksumMode>
-              <failMode>NORMAL</failMode>
-              <makeMode>NONE</makeMode>
-              <mavenOpts>-Xms256m -Xmx1024m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
-              <settingsId>NONE</settingsId>
-              <globalSettingsId>NONE</globalSettingsId>
-              <toolChainsId>NONE</toolChainsId>
-            </config>
-          </maven-builder>
-          <maven-builder>
-            <config>
-              <installationId>Maven-3.0.4</installationId>
-              <goals>javadoc:javadoc</goals>
-              <privateRepository>false</privateRepository>
-              <privateTmpdir>false</privateTmpdir>
-              <pomFile>pom.xml</pomFile>
-              <properties>
-                <entries/>
-              </properties>
-              <errors>false</errors>
-              <verbosity>NORMAL</verbosity>
-              <offline>false</offline>
-              <snapshotUpdateMode>NORMAL</snapshotUpdateMode>
-              <profiles>
-                <string>sample</string>
-                <string>development</string>
               </profiles>
               <recursive>true</recursive>
               <checksumMode>NORMAL</checksumMode>
@@ -928,15 +862,18 @@
     <entry>
       <string>hudson-tasks-ArtifactArchiver</string>
       <external-property>
-        <originalValue class="hudson.tasks.ArtifactArchiver">
-          <artifacts>**/target/*.war, **/*-sources.jar</artifacts>
-          <compressionType>GZIP</compressionType>
-          <latestOnly>false</latestOnly>
-          <autoValidateFileMask>false</autoValidateFileMask>
-        </originalValue>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
       </external-property>
+    </entry>
+    <entry>
+      <string>org-hudsonci-maven-plugin-dependencymonitor-DependencyTrigger</string>
+      <trigger-property>
+        <originalValue class="maven-dependency-trigger">
+          <spec></spec>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </trigger-property>
     </entry>
     <entry>
       <string>hudson-plugins-doxygen-DoxygenArchiver</string>
@@ -946,20 +883,31 @@
       </external-property>
     </entry>
     <entry>
-      <string>org-hudsonci-maven-plugin-dependencymonitor-DependencyTrigger</string>
-      <trigger-property>
-        <propertyOverridden>false</propertyOverridden>
-      </trigger-property>
-    </entry>
-    <entry>
       <string>hudson-plugins-jdepend-JDependRecorder</string>
       <external-property>
-        <originalValue class="hudson.plugins.jdepend.JDependRecorder">
-          <configuredJDependFile></configuredJDependFile>
-        </originalValue>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
       </external-property>
+    </entry>
+    <entry>
+      <string>scm</string>
+      <scm-property>
+        <originalValue class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
+          <locations>
+            <hudson.scm.SubversionSCM_-ModuleLocation>
+              <remote>https://alban.googlecode.com/svn/trunk</remote>
+              <local>.</local>
+              <depthOption>infinity</depthOption>
+              <ignoreExternalsOption>false</ignoreExternalsOption>
+            </hudson.scm.SubversionSCM_-ModuleLocation>
+          </locations>
+          <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
+          <excludedRegions></excludedRegions>
+          <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+          <directory>trunk</directory>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </scm-property>
     </entry>
     <entry>
       <string>hudson-plugins-findbugs-FindBugsPublisher</string>
@@ -994,29 +942,8 @@
       </external-property>
     </entry>
     <entry>
-      <string>scm</string>
-      <scm-property>
-        <originalValue class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
-          <locations>
-            <hudson.scm.SubversionSCM_-ModuleLocation>
-              <remote>https://alban.googlecode.com/svn/trunk</remote>
-              <local>.</local>
-              <depthOption>infinity</depthOption>
-              <ignoreExternalsOption>false</ignoreExternalsOption>
-            </hudson.scm.SubversionSCM_-ModuleLocation>
-          </locations>
-          <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
-          <excludedRegions></excludedRegions>
-          <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-          <directory>trunk</directory>
-        </originalValue>
-        <propertyOverridden>false</propertyOverridden>
-      </scm-property>
-    </entry>
-    <entry>
       <string>org-hudsonci-maven-plugin-artifactrecorder-ArtifactFingerprinter</string>
       <external-property>
-        <originalValue class="maven-artifact-fingerprinter"/>
         <propertyOverridden>false</propertyOverridden>
         <modified>true</modified>
       </external-property>
@@ -1025,7 +952,7 @@
       <string>hudson-triggers-TimerTrigger</string>
       <trigger-property>
         <originalValue class="hudson.triggers.TimerTrigger">
-          <spec>@daily</spec>
+          <spec>*/5 0-9,20-23 * * 1-5</spec>
         </originalValue>
         <propertyOverridden>false</propertyOverridden>
       </trigger-property>
@@ -1039,7 +966,7 @@
     </entry>
   </project-properties>
   <keepDependencies>false</keepDependencies>
-  <creationTime>1351826954796</creationTime>
+  <creationTime>1351812737000</creationTime>
   <properties/>
   <cascadingChildrenNames class="java.util.concurrent.CopyOnWriteArraySet"/>
   <cascading-job-properties class="java.util.concurrent.CopyOnWriteArraySet">
