@@ -4,6 +4,18 @@
 
 = Jenkins =
 
+Add in maven :
+ * -s/jenkins/tools/Maven/Maven-3.0.4/conf/settings.xml
+ * maven.repo.local=/usr/share/tomcat6/.m2/repository
+ * -Psample
+
+Do not use goals (it does not works) :
+ * javancss:report
+ * jdepend:generate
+
+For clover and dashboard add :
+ * java.awt.headless=true
+
 == Ubuntu ==
 
 Install Jenkins on ubuntu
