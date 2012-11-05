@@ -7,6 +7,7 @@
 Add in maven :
  * -s/jenkins/tools/Maven/Maven-3.0.4/conf/settings.xml
  * maven.repo.local=/usr/share/tomcat6/.m2/repository
+ * -Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M
  * -Psample
 
 Do not use goals (it does not works) :
