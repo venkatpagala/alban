@@ -14,6 +14,10 @@ Do not use goals (it does not works) :
  * javancss:report
  * jdepend:generate
 
+Do not use report (it does not works) :
+ * JavaNCSS
+ * JDepend
+
 For clover and dashboard add :
  * java.awt.headless=true
 
