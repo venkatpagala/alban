@@ -3,7 +3,11 @@
 = Introduction =
 
 Install the image using :
-  * CloneZilla via PXE : [http://wi-phye.com/featured/how-to-setup-clonezilla-on-linux-ubuntu-quick-start-guide/ here]
+  * CloneZilla via PXE
+
+*Warning* Prepare a specific partition for the image because clonezilla will erase everything on it!
+
+You should have a ready to use workstation ready in less than 30 minutes.
 
 All the tools listed below have been configurated to works together.
 
