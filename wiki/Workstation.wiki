@@ -1,0 +1,22 @@
+#summary Install admin or developer workstation.
+
+= Introduction =
+
+Install the image using :
+  * CloneZilla via PXE : [http://wi-phye.com/featured/how-to-setup-clonezilla-on-linux-ubuntu-quick-start-guide/ here]
+
+All the tools listed below have been configurated to works together.
+
+= Details =
+
+Image contains the following :
+ * LDAP (connected with NIS)
+ * CROWD (connected to LDAP)
+ * ALM Atlassian tools suite JIRA CONFLUENCE (connected with CROWD and SVN)
+ * Sonar (connected to MySQL and Jenkins)
+ * Jenkins (connected to CROWD, Mavem, Scons, Quality tools)
+ * Maven (connected to nexus and Quality tools)
+ * Quality tools are Coding style/Checkstyle/Findbugs integrated with Maven/Jenkins/Eclipse
+ * MySQL database
+ * Eclipse (connected to SVN, Maven, Scons, Quality tools, Jenkins, JIRA)
+ * APACHE with PHP : phpMyAdmin phpldapadmin
