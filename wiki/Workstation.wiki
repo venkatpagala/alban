@@ -2,12 +2,22 @@
 
 = Introduction =
 
+Vision is to provide a framework of tools connected for a developer to work with efficiency.
+
+Provided environment must be free (open source) and easily maintained. It should be scalable for a larger structure.
+Environment must be easily clone and recreated from scratch.
+Each part of the environment can be extracted independently in order to be easily used within another context.
+It should provide developer tools to work in collaboration with others.
+It should be a the state of the arts and continuously maintained.
+
+= Install workstation =
+
 Install the image using :
   * CloneZilla via PXE
 
 *Warning* Prepare a specific partition for the image because clonezilla will erase everything on it!
 
-You should have a ready to use workstation ready in less than 30 minutes.
+You should have a ready to use workstation ready in less than 30 minutes (depending on the size of the image and your network connection).
 
 All the tools listed below have been configurated to works together.
 
@@ -27,3 +37,5 @@ Image contains the following :
  * Eclipse (connected to SVN, Maven, Scons, Quality tools, Jenkins, JIRA)
  * APACHE with PHP : phpMyAdmin phpldapadmin
  * SVN repository
+
+= What should be possible =
