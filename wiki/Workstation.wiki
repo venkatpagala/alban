@@ -4,11 +4,12 @@
 
 Vision is to provide a framework of tools connected for a developer to work with efficiency.
 
-Provided environment must be free (open source) and easily maintained. It should be scalable for a larger structure.
-Environment must be easily clone and recreated from scratch.
-Each part of the environment can be extracted independently in order to be easily used within another context.
-It should provide developer tools to work in collaboration with others.
-It should be a the state of the arts and continuously maintained.
+ * Provided environment must be free (open source) and easily maintained.
+ * It should be scalable for a larger structure.
+ * Environment must be easily clone and recreated from scratch.
+ * Each part of the environment can be extracted independently in order to be easily used within another context.
+ * It should provide developer tools to work in collaboration with others.
+ * It should be a the state of the arts and continuously maintained.
 
 = Install workstation =
 
@@ -40,8 +41,8 @@ Image contains the following :
 
 = What should be possible =
 
-Easily switch C++ build from CMake to Scons
-Switch from Jenkins to Hudson.
-Switch from JIRA to BugZilla.
-Switch Confluence to MediaWiki
-Switch SVN to GIT
+ * Easily switch C++ build from CMake to Scons
+ * Switch from Jenkins to Hudson.
+ * Switch from JIRA to BugZilla.
+ * Switch Confluence to MediaWiki
+ * Switch SVN to GIT
