@@ -14,6 +14,8 @@ All the tools listed below have been configurated to works together.
 = Details =
 
 Image contains the following :
+ * GParted/Synaptic/Samba/VNC
+ * DHCP server with CloneZilla
  * LDAP (connected with NIS)
  * CROWD (connected to LDAP)
  * ALM Atlassian tools suite JIRA CONFLUENCE (connected with CROWD and SVN)
@@ -24,3 +26,4 @@ Image contains the following :
  * MySQL database
  * Eclipse (connected to SVN, Maven, Scons, Quality tools, Jenkins, JIRA)
  * APACHE with PHP : phpMyAdmin phpldapadmin
+ * SVN repository
