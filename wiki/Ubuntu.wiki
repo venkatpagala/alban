@@ -5,7 +5,7 @@
 Below are listed what I did on ubuntu.
 Kind of reminder...
 
-= Details =
+= Basics =
 
 == Add a user == 
 
@@ -53,3 +53,9 @@ or the line below if you prefer input your password each time you do a sudo:
 {{{
 albandri ALL=(ALL) ALL
 }}}
+
+= Development tools = 
+
+== Install Maven 3 == 
+
+[http://yarovoy.com/post/14363197336/maven-how-to-install-maven-3-on-ubuntu-11-10 maven-3-install]
