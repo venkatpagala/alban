@@ -19,7 +19,7 @@ Install the image using :
 
 You should have a ready to use workstation ready in less than 30 minutes (depending on the size of the image and your network connection).
 
-All the tools listed below have been configurated to works together.
+All the tools listed below have been configure to works together.
 
 = Details =
 
@@ -39,3 +39,9 @@ Image contains the following :
  * SVN repository
 
 = What should be possible =
+
+Easily switch C++ build from CMake to Scons
+Switch from Jenkins to Hudson.
+Switch from JIRA to BugZilla.
+Switch Confluence to MediaWiki
+Switch SVN to GIT
