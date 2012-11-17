@@ -99,3 +99,21 @@ Windows > Preferences...
   * Install/Updates -> Automatic updates -> Automatic find new updates and notify me
   * Install/Updates -> Automatic updates -> Download new updates automatically...
   * Java -> Installed JREs -> Add... Standard VM C:\Program Files (x86)\Java\jre6
+
+= Hibernate/JPA =
+
+Add Hibernate Configuration
+In prpject properties
+ * Hibernate Settings -> Enable Hibernate support
+ * Hibernate Configuration -> Common -> Shared file -> select your project
+ * Hibernate Configuration -> Options-> Database Dialect -> H2
+ * Hibernate Configuration -> Main-> Type -> JPA
+ * Hibernate Configuration -> Main-> Hibernate Version -> 3.6
+ * Hibernate Configuration -> Main-> Database connection -> H2 Generic JDBC
+ * Hibernate Configuration -> Main-> Property file -> \your project\hibernate-console.properties
+ * Hibernate Configuration -> Main-> Persistence Unit -> your persistence unit
+
+Add JPA Facet
+ * Platform Generic 2.0
+ * JPA Implementation -> Disable Library Configuration
+ * JPA Implementation -> Connection -> H2 Generic JDBC
