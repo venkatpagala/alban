@@ -117,3 +117,7 @@ Add JPA Facet
  * Platform Generic 2.0
  * JPA Implementation -> Disable Library Configuration
  * JPA Implementation -> Connection -> H2 Generic JDBC
+
+Commit generated file :
+ * your project-1.0.launch
+ * hibernate-console.properties
