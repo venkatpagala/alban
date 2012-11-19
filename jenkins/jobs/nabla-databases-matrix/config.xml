@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project>
+  <actions/>
+  <description>&lt;p&gt;Build &lt;b&gt;Nabla&lt;/b&gt; &lt;i&gt;Databases&lt;/i&gt; matrix after the nightly job.&lt;br&gt;&#xd;
+The main goals of this job is to test our projet build regards multiple environemnet, it provide quick feedback to release manager.&lt;br&gt;&#xd;
+It does not keep build history.&lt;br&gt;&#xd;
+&lt;br&gt;&#xd;
+This build check that our project can be delivered on targeted environments.&#xd;
+&lt;/p&gt;</description>
+  <logRotator>
+    <daysToKeep>7</daysToKeep>
+    <numToKeep>3</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.googlecode.GoogleCodeProjectProperty>
+      <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
+    </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>https://alban.googlecode.com/svn/trunk/databases</remote>
+        <local>.</local>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
+    <excludedRegions></excludedRegions>
+    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <directory>trunk/databases</directory>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <axes>
+    <hudson.matrix.TextAxis>
+      <name>database</name>
+      <values>
+        <string>mysql</string>
+        <string>derby</string>
+        <string>hsqldb</string>
+      </values>
+    </hudson.matrix.TextAxis>
+    <hudson.matrix.JDKAxis>
+      <name>jdk</name>
+      <values>
+        <string>JDK 6</string>
+        <string>JDK 7u7</string>
+      </values>
+    </hudson.matrix.JDKAxis>
+  </axes>
+  <builders>
+    <hudson.tasks.Maven>
+      <targets>-U -Dsurefire.useFile=false install -Psample</targets>
+      <mavenName>Maven-3.0.4</mavenName>
+      <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
+      <usePrivateRepository>true</usePrivateRepository>
+    </hudson.tasks.Maven>
+  </builders>
+  <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>nabla-databases-integration</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+  </publishers>
+  <buildWrappers/>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>false</runSequentially>
+    <touchStoneCombinationFilter>(database == &quot;derby&quot;)</touchStoneCombinationFilter>
+    <touchStoneResultCondition>
+      <name>SUCCESS</name>
+      <ordinal>0</ordinal>
+      <color>BLUE</color>
+    </touchStoneResultCondition>
+  </executionStrategy>
+</matrix-project>

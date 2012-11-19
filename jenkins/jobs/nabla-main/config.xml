@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven2-moduleset>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.googlecode.GoogleCodeProjectProperty>
+      <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
+    </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>https://alban.googlecode.com/svn/trunk/main</remote>
+        <local>.</local>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
+    <excludedRegions></excludedRegions>
+    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <directory>trunk/main</directory>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec>@weekly</spec>
+    </hudson.triggers.TimerTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>@daily</spec>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <rootModule>
+    <groupId>com.nabla.project</groupId>
+    <artifactId>main</artifactId>
+  </rootModule>
+  <goals>-U -Dsurefire.useFile=false clean install -N</goals>
+  <defaultGoals>install</defaultGoals>
+  <mavenName>Maven-3.0.4</mavenName>
+  <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
+  <incrementalBuild>false</incrementalBuild>
+  <localRepository class="hudson.maven.local_repo.DefaultLocalRepositoryLocator"/>
+  <perModuleEmail>true</perModuleEmail>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <archivingDisabled>false</archivingDisabled>
+  <resolveDependencies>false</resolveDependencies>
+  <processPlugins>false</processPlugins>
+  <mavenValidationLevel>30</mavenValidationLevel>
+  <runHeadless>false</runHeadless>
+  <settingConfigId></settingConfigId>
+  <globalSettingConfigId></globalSettingConfigId>
+  <reporters/>
+  <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>nabla-databases-continuous</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+  </publishers>
+  <buildWrappers/>
+  <prebuilders/>
+  <postbuilders/>
+  <runPostStepsIfResult>
+    <name>FAILURE</name>
+    <ordinal>2</ordinal>
+    <color>RED</color>
+  </runPostStepsIfResult>
+</maven2-moduleset>
