@@ -67,6 +67,7 @@ Plugins links are :
   * Hudson - http://hudson-eclipse.googlecode.com/svn/trunk/hudson-update
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse
   * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
+  * Clover -  http://update.atlassian.com/eclipse/clover
 
 = C++ Plugins =
 
