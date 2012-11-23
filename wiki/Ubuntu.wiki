@@ -62,7 +62,7 @@ Install CloneZilla [http://wi-phye.com/featured/how-to-setup-clonezilla-on-linux
 
 or
 
-Install CloneZilla Live [http://clonezilla.org/clonezilla-live.php here] with [http://tuxboot.org/about/ tuxboot]
+Install CloneZilla Live [http://clonezilla.org/clonezilla-live.php here] with [http://tuxboot.org/about/ tuxboot] on a USB key
 
 
 == Install Maven 3 == 
