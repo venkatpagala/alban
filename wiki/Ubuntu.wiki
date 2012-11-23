@@ -60,6 +60,11 @@ albandri ALL=(ALL) ALL
 
 Install CloneZilla [http://wi-phye.com/featured/how-to-setup-clonezilla-on-linux-ubuntu-quick-start-guide/ here]
 
+or
+
+Install CloneZilla Live [http://clonezilla.org/clonezilla-live.php here] with [http://tuxboot.org/about/ tuxboot]
+
+
 == Install Maven 3 == 
 
 [http://yarovoy.com/post/14363197336/maven-how-to-install-maven-3-on-ubuntu-11-10 maven-3-install]
