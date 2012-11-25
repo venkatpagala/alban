@@ -47,3 +47,7 @@ Properties
    C:\workspace\users\albandri10
  * uml.type
    uml2
+ * andromda3.profiles
+   C:\workspace\users\albandri10\nabla\profiles\uml2
+ * andromda3.metafacades
+   C:\workspace\users\albandri10\nabla\metafacades\uml2\common
