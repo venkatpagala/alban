@@ -51,3 +51,7 @@ Properties
    C:\workspace\users\albandri10\nabla\profiles\uml2
  * andromda3.metafacades
    C:\workspace\users\albandri10\nabla\metafacades\uml2\common
+ * maven2.repository
+   C:\repo
+ * andromda.version
+   3.5
