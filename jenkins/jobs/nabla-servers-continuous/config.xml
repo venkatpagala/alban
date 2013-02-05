@@ -30,6 +30,34 @@ as soon it does not take too long.&#xd;
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+    <com.cloudbees.plugins.deployer.DeployNowJobProperty>
+      <oneClickDeploy>false</oneClickDeploy>
+      <configuration>
+        <user>alban.andrieu@free.fr</user>
+        <account>nabla</account>
+        <deployables>
+          <com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+            <applicationId></applicationId>
+            <applicationEnvironment></applicationEnvironment>
+            <applicationConfig/>
+            <apiEndPoint>https://api.cloudbees.com/api</apiEndPoint>
+            <groupId>com.nabla.project.servers.sample</groupId>
+            <artifactId>jsf-simple</artifactId>
+          </com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+          <com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+            <applicationId></applicationId>
+            <applicationEnvironment></applicationEnvironment>
+            <applicationConfig/>
+            <apiEndPoint>https://api.cloudbees.com/api</apiEndPoint>
+            <groupId>org.jboss.tools.gwt.kitchensink</groupId>
+            <artifactId>gwt-kitchensink</artifactId>
+          </com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+        </deployables>
+      </configuration>
+    </com.cloudbees.plugins.deployer.DeployNowJobProperty>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
   </properties>
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
@@ -41,13 +69,14 @@ as soon it does not take too long.&#xd;
     <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <directory>trunk/servers</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>(Valeur par défaut)</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@daily</spec>
@@ -74,7 +103,7 @@ as soon it does not take too long.&#xd;
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>30</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
+  <runHeadless>true</runHeadless>
   <settingConfigId></settingConfigId>
   <globalSettingConfigId></globalSettingConfigId>
   <reporters>
@@ -377,6 +406,11 @@ as soon it does not take too long.&#xd;
     </hudson.plugins.violations.hudson.maven.ViolationsMavenReporter>
   </reporters>
   <publishers>
+    <com.sonatype.insight.ci.hudson.PostBuildScan>
+      <billOfMaterialsToken></billOfMaterialsToken>
+      <pathConfig/>
+      <failOnSecurityAlerts>false</failOnSecurityAlerts>
+    </com.sonatype.insight.ci.hudson.PostBuildScan>
     <hudson.plugins.warnings.WarningsPublisher>
       <healthy></healthy>
       <unHealthy></unHealthy>
@@ -446,17 +480,6 @@ as soon it does not take too long.&#xd;
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <hudson.plugins.dependencyanalyzer.DependencyAnalyzerPublisher/>
-    <hudson.plugins.clover.CloverPublisher>
-      <cloverReportDir>target/site/clover</cloverReportDir>
-      <cloverReportFileName>clover.xml</cloverReportFileName>
-      <healthyTarget>
-        <methodCoverage>70</methodCoverage>
-        <conditionalCoverage>80</conditionalCoverage>
-        <statementCoverage>80</statementCoverage>
-      </healthyTarget>
-      <unhealthyTarget/>
-      <failingTarget/>
-    </hudson.plugins.clover.CloverPublisher>
     <hudson.plugins.cobertura.CoberturaPublisher>
       <coberturaReportFile>**/target/site/cobertura/coverage.xml</coberturaReportFile>
       <onlyStable>false</onlyStable>
@@ -464,6 +487,8 @@ as soon it does not take too long.&#xd;
       <failUnstable>false</failUnstable>
       <autoUpdateHealth>false</autoUpdateHealth>
       <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <failNoReports>false</failNoReports>
       <healthyTarget>
         <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
           <entry>
@@ -533,16 +558,16 @@ as soon it does not take too long.&#xd;
     <hudson.tasks.BuildTrigger>
       <childProjects>nabla-project-continuous</childProjects>
       <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
+        <name>UNSTABLE</name>
+        <ordinal>1</ordinal>
+        <color>YELLOW</color>
       </threshold>
     </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>-U clean validate -Psample,arq-jbossas-managed</targets>
+      <targets>-fae -U clean validate -Psample,arq-jbossas-managed</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
@@ -563,8 +588,8 @@ as soon it does not take too long.&#xd;
     </hudson.tasks.Maven>
   </postbuilders>
   <runPostStepsIfResult>
-    <name>UNSTABLE</name>
-    <ordinal>1</ordinal>
-    <color>YELLOW</color>
+    <name>SUCCESS</name>
+    <ordinal>0</ordinal>
+    <color>BLUE</color>
   </runPostStepsIfResult>
 </maven2-moduleset>

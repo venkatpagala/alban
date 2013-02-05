@@ -30,6 +30,26 @@ as soon it does not take too long.&#xd;
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+    <com.cloudbees.plugins.deployer.DeployNowJobProperty>
+      <oneClickDeploy>false</oneClickDeploy>
+      <configuration>
+        <user>alban.andrieu@free.fr</user>
+        <account>nabla</account>
+        <deployables>
+          <com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+            <applicationId></applicationId>
+            <applicationEnvironment></applicationEnvironment>
+            <applicationConfig/>
+            <apiEndPoint>https://api.cloudbees.com/api</apiEndPoint>
+            <groupId>org.andromda.test</groupId>
+            <artifactId>web</artifactId>
+          </com.cloudbees.plugins.deployer.deployables.MavenMatchingDeployable>
+        </deployables>
+      </configuration>
+    </com.cloudbees.plugins.deployer.DeployNowJobProperty>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
   </properties>
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
@@ -41,13 +61,14 @@ as soon it does not take too long.&#xd;
     <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <directory>trunk/uml</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>(Valeur par défaut)</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@daily</spec>
@@ -61,12 +82,12 @@ as soon it does not take too long.&#xd;
     <groupId>com.nabla.project</groupId>
     <artifactId>uml</artifactId>
   </rootModule>
-  <goals>-U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample,arq-jbossas-managed</goals>
+  <goals>-fae -U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample,arq-jbossas-managed</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
   <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
-  <incrementalBuild>true</incrementalBuild>
+  <incrementalBuild>false</incrementalBuild>
   <localRepository class="hudson.maven.local_repo.DefaultLocalRepositoryLocator"/>
   <perModuleEmail>true</perModuleEmail>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -74,7 +95,7 @@ as soon it does not take too long.&#xd;
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>30</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
+  <runHeadless>true</runHeadless>
   <settingConfigId></settingConfigId>
   <globalSettingConfigId></globalSettingConfigId>
   <reporters>
@@ -377,6 +398,11 @@ as soon it does not take too long.&#xd;
     </hudson.plugins.violations.hudson.maven.ViolationsMavenReporter>
   </reporters>
   <publishers>
+    <com.sonatype.insight.ci.hudson.PostBuildScan>
+      <billOfMaterialsToken></billOfMaterialsToken>
+      <pathConfig/>
+      <failOnSecurityAlerts>false</failOnSecurityAlerts>
+    </com.sonatype.insight.ci.hudson.PostBuildScan>
     <hudson.plugins.warnings.WarningsPublisher>
       <healthy></healthy>
       <unHealthy></unHealthy>
@@ -446,17 +472,6 @@ as soon it does not take too long.&#xd;
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <hudson.plugins.dependencyanalyzer.DependencyAnalyzerPublisher/>
-    <hudson.plugins.clover.CloverPublisher>
-      <cloverReportDir>target/site/clover</cloverReportDir>
-      <cloverReportFileName>clover.xml</cloverReportFileName>
-      <healthyTarget>
-        <methodCoverage>70</methodCoverage>
-        <conditionalCoverage>80</conditionalCoverage>
-        <statementCoverage>80</statementCoverage>
-      </healthyTarget>
-      <unhealthyTarget/>
-      <failingTarget/>
-    </hudson.plugins.clover.CloverPublisher>
     <hudson.plugins.cobertura.CoberturaPublisher>
       <coberturaReportFile>**/target/site/cobertura/coverage.xml</coberturaReportFile>
       <onlyStable>false</onlyStable>
@@ -464,6 +479,8 @@ as soon it does not take too long.&#xd;
       <failUnstable>false</failUnstable>
       <autoUpdateHealth>false</autoUpdateHealth>
       <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <failNoReports>false</failNoReports>
       <healthyTarget>
         <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
           <entry>
@@ -514,15 +531,6 @@ as soon it does not take too long.&#xd;
       </failingTarget>
       <sourceEncoding>ASCII</sourceEncoding>
     </hudson.plugins.cobertura.CoberturaPublisher>
-    <hudson.plugins.performance.PerformancePublisher>
-      <errorFailedThreshold>0</errorFailedThreshold>
-      <errorUnstableThreshold>0</errorUnstableThreshold>
-      <parsers>
-        <hudson.plugins.performance.JUnitParser>
-          <glob>**/TEST-*.xml </glob>
-        </hudson.plugins.performance.JUnitParser>
-      </parsers>
-    </hudson.plugins.performance.PerformancePublisher>
     <hudson.plugins.claim.ClaimPublisher/>
     <hudson.plugins.covcomplplot.CovComplPlotPublisher>
       <analyzer>Cobertura</analyzer>
@@ -563,8 +571,8 @@ as soon it does not take too long.&#xd;
     </hudson.tasks.Maven>
   </postbuilders>
   <runPostStepsIfResult>
-    <name>UNSTABLE</name>
-    <ordinal>1</ordinal>
-    <color>YELLOW</color>
+    <name>SUCCESS</name>
+    <ordinal>0</ordinal>
+    <color>BLUE</color>
   </runPostStepsIfResult>
 </maven2-moduleset>

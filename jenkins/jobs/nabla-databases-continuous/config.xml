@@ -30,6 +30,17 @@ as soon it does not take too long.&#xd;
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+    <com.cloudbees.plugins.deployer.DeployNowJobProperty>
+      <oneClickDeploy>false</oneClickDeploy>
+      <configuration>
+        <user>alban.andrieu@free.fr</user>
+        <account>nabla</account>
+        <deployables/>
+      </configuration>
+    </com.cloudbees.plugins.deployer.DeployNowJobProperty>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
   </properties>
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
@@ -41,13 +52,14 @@ as soon it does not take too long.&#xd;
     <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <directory>trunk/databases</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>(Default)</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@daily</spec>
@@ -61,7 +73,7 @@ as soon it does not take too long.&#xd;
     <groupId>com.nabla.project</groupId>
     <artifactId>databases</artifactId>
   </rootModule>
-  <goals>-U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -Ddatabase=derby</goals>
+  <goals>-fae -U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -Ddatabase=derby</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
   <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
@@ -74,7 +86,7 @@ as soon it does not take too long.&#xd;
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>30</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
+  <runHeadless>true</runHeadless>
   <settingConfigId></settingConfigId>
   <globalSettingConfigId></globalSettingConfigId>
   <reporters>
@@ -446,17 +458,6 @@ as soon it does not take too long.&#xd;
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <hudson.plugins.dependencyanalyzer.DependencyAnalyzerPublisher/>
-    <hudson.plugins.clover.CloverPublisher>
-      <cloverReportDir>target/site/clover</cloverReportDir>
-      <cloverReportFileName>clover.xml</cloverReportFileName>
-      <healthyTarget>
-        <methodCoverage>70</methodCoverage>
-        <conditionalCoverage>80</conditionalCoverage>
-        <statementCoverage>80</statementCoverage>
-      </healthyTarget>
-      <unhealthyTarget/>
-      <failingTarget/>
-    </hudson.plugins.clover.CloverPublisher>
     <hudson.plugins.cobertura.CoberturaPublisher>
       <coberturaReportFile>**/target/site/cobertura/coverage.xml</coberturaReportFile>
       <onlyStable>false</onlyStable>
@@ -464,6 +465,8 @@ as soon it does not take too long.&#xd;
       <failUnstable>false</failUnstable>
       <autoUpdateHealth>false</autoUpdateHealth>
       <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <failNoReports>false</failNoReports>
       <healthyTarget>
         <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
           <entry>
@@ -561,10 +564,15 @@ as soon it does not take too long.&#xd;
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
+    <com.sonatype.insight.ci.hudson.PreBuildScan>
+      <billOfMaterialsToken></billOfMaterialsToken>
+      <pathConfig/>
+      <failOnSecurityAlerts>false</failOnSecurityAlerts>
+    </com.sonatype.insight.ci.hudson.PreBuildScan>
   </postbuilders>
   <runPostStepsIfResult>
-    <name>UNSTABLE</name>
-    <ordinal>1</ordinal>
-    <color>YELLOW</color>
+    <name>SUCCESS</name>
+    <ordinal>0</ordinal>
+    <color>BLUE</color>
   </runPostStepsIfResult>
 </maven2-moduleset>

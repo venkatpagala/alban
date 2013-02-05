@@ -23,14 +23,17 @@ as soon it does not take too long.&#xd;
   <logRotator>
     <daysToKeep>365</daysToKeep>
     <numToKeep>100</numToKeep>
-    <artifactDaysToKeep>365</artifactDaysToKeep>
-    <artifactNumToKeep>3100</artifactNumToKeep>
+    <artifactDaysToKeep>7</artifactDaysToKeep>
+    <artifactNumToKeep>10</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
   </properties>
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
@@ -48,7 +51,7 @@ as soon it does not take too long.&#xd;
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>(Default)</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@midnight</spec>
@@ -62,7 +65,7 @@ as soon it does not take too long.&#xd;
     <groupId>com.nabla.project</groupId>
     <artifactId>databases</artifactId>
   </rootModule>
-  <goals>-U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -Ddatabase=derby</goals>
+  <goals>-U -Dsurefire.useFile=false clover2:setup install clover2:aggregate clover2:clover pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -Ddatabase=derby</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
   <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
@@ -75,7 +78,7 @@ as soon it does not take too long.&#xd;
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>30</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
+  <runHeadless>true</runHeadless>
   <settingConfigId></settingConfigId>
   <globalSettingConfigId></globalSettingConfigId>
   <reporters>
@@ -465,6 +468,8 @@ as soon it does not take too long.&#xd;
       <failUnstable>false</failUnstable>
       <autoUpdateHealth>false</autoUpdateHealth>
       <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <failNoReports>false</failNoReports>
       <healthyTarget>
         <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
           <entry>
@@ -529,7 +534,7 @@ as soon it does not take too long.&#xd;
       <branch></branch>
       <language></language>
       <mavenOpts></mavenOpts>
-      <jobAdditionalProperties></jobAdditionalProperties>
+      <jobAdditionalProperties>-Psample -Ddatabase=derby</jobAdditionalProperties>
     </hudson.plugins.sonar.SonarPublisher>
     <hudson.plugins.claim.ClaimPublisher/>
     <hudson.plugins.covcomplplot.CovComplPlotPublisher>
@@ -539,7 +544,7 @@ as soon it does not take too long.&#xd;
       <locateTopMost>true</locateTopMost>
     </hudson.plugins.covcomplplot.CovComplPlotPublisher>
     <hudson.tasks.BuildTrigger>
-      <childProjects>nabla-databases-matrix</childProjects>
+      <childProjects>nabla-databases-matrix, nabla-servers-nightly</childProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -550,21 +555,13 @@ as soon it does not take too long.&#xd;
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>clean validate -Psample -Ddatabase=derby</targets>
+      <targets>clean clover2:setup clover2:optimize test clover2:snapshot -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </prebuilders>
   <postbuilders>
-    <hudson.tasks.Maven>
-      <targets>verify -Psample,clover.report -Ddatabase=derby</targets>
-      <mavenName>Maven-3.0.4</mavenName>
-      <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
-      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
-java.awt.headless=true</properties>
-      <usePrivateRepository>false</usePrivateRepository>
-    </hudson.tasks.Maven>
     <hudson.tasks.Maven>
       <targets>javadoc:javadoc javadoc:jar -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
@@ -575,6 +572,14 @@ java.awt.headless=true</properties>
       <mavenName>Maven-3.0.4</mavenName>
       <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
+      <usePrivateRepository>false</usePrivateRepository>
+    </hudson.tasks.Maven>
+    <hudson.tasks.Maven>
+      <targets>site -Psample -Ddatabase=derby</targets>
+      <mavenName>Maven-3.0.4</mavenName>
+      <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
+      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
+java.awt.headless=true</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </postbuilders>

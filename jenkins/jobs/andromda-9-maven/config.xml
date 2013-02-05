@@ -1,48 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset>
   <actions/>
-  <description></description>
+  <description>Build andromda 3.5</description>
   <logRotator>
     <daysToKeep>365</daysToKeep>
     <numToKeep>100</numToKeep>
-    <artifactDaysToKeep>7</artifactDaysToKeep>
-    <artifactNumToKeep>10</artifactNumToKeep>
+    <artifactDaysToKeep>365</artifactDaysToKeep>
+    <artifactNumToKeep>100</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
-    <com.cloudbees.plugins.deployer.DeployNowJobProperty>
-      <oneClickDeploy>false</oneClickDeploy>
-      <configuration>
-        <user>alban.andrieu@free.fr</user>
-        <account>nabla</account>
-        <deployables/>
-      </configuration>
-    </com.cloudbees.plugins.deployer.DeployNowJobProperty>
     <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
       <doNotScan>false</doNotScan>
     </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
   </properties>
-  <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
-    <locations>
-      <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://alban.googlecode.com/svn/trunk/build-tools</remote>
-        <local>.</local>
-      </hudson.scm.SubversionSCM_-ModuleLocation>
-    </locations>
-    <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
-    <excludedRegions></excludedRegions>
-    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-    <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <directory>trunk/build-tools</directory>
-  </scm>
+  <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>JDK 6</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@weekly</spec>
@@ -52,14 +32,15 @@
     </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/workspace/divers/andromda/trunk/maven</customWorkspace>
   <rootModule>
-    <groupId>com.nabla.project</groupId>
-    <artifactId>build-tools</artifactId>
+    <groupId>org.andromda.maven.plugins</groupId>
+    <artifactId>andromda-maven-plugins</artifactId>
   </rootModule>
-  <goals>-fae -U -Dsurefire.useFile=false clean install deploy -Djava.runtime.version=1.6 -Djava.source.version=1.6</goals>
+  <goals>-U -Dsurefire.useFile=false clean install -Pandromda-lite</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
-  <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
+  <mavenOpts>-Xms256m -Xmx1024m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <localRepository class="hudson.maven.local_repo.DefaultLocalRepositoryLocator"/>
@@ -101,25 +82,20 @@
     </hudson.plugins.tasks.TasksReporter>
   </reporters>
   <publishers>
-    <com.sonatype.insight.ci.hudson.PostBuildScan>
-      <billOfMaterialsToken></billOfMaterialsToken>
-      <pathConfig/>
-      <failOnSecurityAlerts>false</failOnSecurityAlerts>
-    </com.sonatype.insight.ci.hudson.PostBuildScan>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>nabla-maven</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.maven.RedeployPublisher>
       <id>server-forge-release</id>
       <url>https://repository-nabla.forge.cloudbees.com/release</url>
       <uniqueVersion>false</uniqueVersion>
       <evenIfUnstable>false</evenIfUnstable>
     </hudson.maven.RedeployPublisher>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>andromda-10-profiles</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders/>

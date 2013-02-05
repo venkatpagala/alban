@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset>
   <actions/>
-  <description>&lt;p&gt;Build &lt;b&gt;Nabla&lt;/b&gt; &lt;i&gt;Project&lt;/i&gt; continuously during working days.&lt;br&gt;&#xd;
+  <description>&lt;p&gt;Build &lt;b&gt;Nabla&lt;/b&gt; &lt;i&gt;Nabla timetracker-ejb3&lt;/i&gt; continuously during working days.&lt;br&gt;&#xd;
 The main goals of this job is to build fast, often and provide quick feedback to developer.&lt;br&gt;&#xd;
 It does not keep build history.&lt;br&gt;&#xd;
 &lt;br&gt;&#xd;
@@ -45,21 +45,24 @@ as soon it does not take too long.&#xd;
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://alban.googlecode.com/svn/trunk/project</remote>
+        <remote>https://alban.googlecode.com/svn/trunk/nabla</remote>
         <local>.</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>false</ignoreExternalsOption>
       </hudson.scm.SubversionSCM_-ModuleLocation>
     </locations>
     <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
     <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <directory>trunk/project</directory>
+    <filterChangelog>false</filterChangelog>
+    <directory>trunk/nabla/</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>JDK 6</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@daily</spec>
@@ -70,13 +73,14 @@ as soon it does not take too long.&#xd;
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
-    <groupId>com.nabla.project</groupId>
-    <artifactId>project</artifactId>
+    <groupId>org.andromda.timetracker.ejb3</groupId>
+    <artifactId>timetracker-ejb3</artifactId>
   </rootModule>
-  <goals>-fae -U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -DjdkLevel=1.6</goals>
+  <rootPOM>sample/timetracker-ejb3/pom.xml</rootPOM>
+  <goals>-fae -U -Dsurefire.useFile=false install  pmd:pmd pmd:cpd checkstyle:checkstyle cobertura:cobertura -Parq-jbossas-managed -Dserver=jboss5</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
-  <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
+  <mavenOpts>-Xms256m -Xmx1024m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <localRepository class="hudson.maven.local_repo.DefaultLocalRepositoryLocator"/>
@@ -538,35 +542,30 @@ as soon it does not take too long.&#xd;
       <excludeGetterSetter>false</excludeGetterSetter>
       <locateTopMost>true</locateTopMost>
     </hudson.plugins.covcomplplot.CovComplPlotPublisher>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>nabla-uml-continuous</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>-U clean validate -Psample,arq-jbossas-managed -DjdkLevel=1.6</targets>
+      <targets>-U clean validate -Psample,arq-jbossas-managed -Dserver=jboss5</targets>
       <mavenName>Maven-3.0.4</mavenName>
+      <pom>sample/timetracker-ejb3/pom.xml</pom>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </prebuilders>
   <postbuilders>
     <hudson.tasks.Maven>
-      <targets>javadoc:javadoc -Psample -DjdkLevel=1.6</targets>
+      <targets>javadoc:javadoc -P!mda -Dno-cartridges=,server=jboss5</targets>
       <mavenName>Maven-3.0.4</mavenName>
+      <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
+      <pom>sample/timetracker-ejb3/pom.xml</pom>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
     <hudson.tasks.Maven>
-      <targets>javadoc:aggregate -Psample -DjdkLevel=1.6</targets>
+      <targets>javadoc:aggregate -P!mda -Dno-cartridges=,server=jboss5</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
-      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
+      <pom>sample/timetracker-ejb3/pom.xml</pom>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </postbuilders>

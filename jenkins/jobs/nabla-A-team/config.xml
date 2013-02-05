@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.cloudbees.hudson.plugins.folder.Folder>
+  <actions/>
+  <description></description>
+  <properties>
+    <com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty>
+      <properties></properties>
+    </com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty>
+    <com.cloudbees.hudson.plugins.folder.properties.SubItemFilterProperty/>
+  </properties>
+  <icon class="com.cloudbees.hudson.plugins.folder.icons.AggregateFolderIcon">
+    <folder reference="../.."/>
+    <baseName>folder</baseName>
+  </icon>
+  <views>
+    <hudson.model.ListView>
+      <owner class="com.cloudbees.hudson.plugins.folder.Folder" reference="../../.."/>
+      <name>A-team</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames class="tree-set">
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <com.cloudbees.plugins.deployer.DeployNowColumn/>
+        <org.tomfolga.PomDependenciesColumn>
+          <onlyWithinGroupId>false</onlyWithinGroupId>
+          <columnName>Maven Dependencies</columnName>
+        </org.tomfolga.PomDependenciesColumn>
+        <org.tomfolga.PomModulesShortColumn>
+          <columnName>Maven Modules (Short)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>true</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesShortColumn>
+        <org.tomfolga.PomModulesVersionColumn>
+          <columnName>Maven Modules (Version)</columnName>
+          <showGroupId>false</showGroupId>
+          <showArtifactId>false</showArtifactId>
+          <showVersion>true</showVersion>
+        </org.tomfolga.PomModulesVersionColumn>
+        <com.sonatype.insight.ci.hudson.QualityColumn/>
+      </columns>
+      <includeRegex>(?!trunk.*).*</includeRegex>
+    </hudson.model.ListView>
+  </views>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <primaryView>A-team</primaryView>
+</com.cloudbees.hudson.plugins.folder.Folder>

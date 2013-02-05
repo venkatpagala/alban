@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset>
   <actions/>
-  <description>&lt;p&gt;Build &lt;b&gt;Nabla&lt;/b&gt; &lt;i&gt;Project&lt;/i&gt; continuously during working days.&lt;br&gt;&#xd;
-The main goals of this job is to build fast, often and provide quick feedback to developer.&lt;br&gt;&#xd;
-It does not keep build history.&lt;br&gt;&#xd;
+  <description>&lt;p&gt;Build &lt;b&gt;Nabla&lt;/b&gt; &lt;i&gt;Nabla Timetracker Hibernate&lt;/i&gt; nightly at midnight.&lt;br&gt;&#xd;
+The main goals of this job is to do clean build fast, every day and provide quick feedback to developer.&lt;br&gt;&#xd;
+It keeps build history for trend analyses.&lt;br&gt;&#xd;
 &lt;br&gt;&#xd;
-Report as much as possible :&#xd;
+Report as much as possible (like the equivalent continuous job):&#xd;
 &lt;ul&gt;&#xd;
   &lt;li&gt;tests results&lt;/li&gt;&#xd;
   &lt;li&gt;coding style&lt;/li&gt;&#xd;
@@ -14,16 +14,17 @@ Report as much as possible :&#xd;
   &lt;li&gt;cpd&lt;/li&gt;&#xd;
   &lt;li&gt;checkstyle&lt;/li&gt;  &#xd;
   &lt;li&gt;findbugs&lt;/li&gt;&#xd;
-  &lt;li&gt;cobertura&lt;/li&gt;&#xd;
-  &lt;li&gt;javadoc&lt;/li&gt;     &#xd;
+  &lt;li&gt;cobertura&lt;/li&gt; &#xd;
+  &lt;li&gt;javadoc&lt;/li&gt;    &#xd;
+  &lt;li&gt;clover&lt;/li&gt;     &#xd;
 &lt;/ul&gt;&#xd;
 as soon it does not take too long.&#xd;
 &lt;/p&gt;</description>
   <logRotator>
-    <daysToKeep>7</daysToKeep>
-    <numToKeep>3</numToKeep>
+    <daysToKeep>365</daysToKeep>
+    <numToKeep>100</numToKeep>
     <artifactDaysToKeep>7</artifactDaysToKeep>
-    <artifactNumToKeep>3</artifactNumToKeep>
+    <artifactNumToKeep>10</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
@@ -45,7 +46,7 @@ as soon it does not take too long.&#xd;
   <scm class="hudson.plugins.googlecode.scm.GoogleCodeSCMEx">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://alban.googlecode.com/svn/trunk/project</remote>
+        <remote>https://alban.googlecode.com/svn/trunk/nabla</remote>
         <local>.</local>
       </hudson.scm.SubversionSCM_-ModuleLocation>
     </locations>
@@ -53,27 +54,28 @@ as soon it does not take too long.&#xd;
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
     <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <directory>trunk/project</directory>
+    <directory>trunk/nabla</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>JDK 6</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
-      <spec>@daily</spec>
+      <spec>@midnight</spec>
     </hudson.triggers.TimerTrigger>
     <hudson.triggers.SCMTrigger>
-      <spec>*/5 0-9,20-23 * * 1-5</spec>
+      <spec>@daily</spec>
     </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
-    <groupId>com.nabla.project</groupId>
-    <artifactId>project</artifactId>
+    <groupId>org.andromda.timetracker.hibernate</groupId>
+    <artifactId>timetracker-hibernate</artifactId>
   </rootModule>
-  <goals>-fae -U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -DjdkLevel=1.6</goals>
+  <rootPOM>sample/timetracker-hibernate/pom.xml</rootPOM>
+  <goals>-U -Dsurefire.useFile=false clover2:setup install clover2:aggregate clover2:clover pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample,arq-jbossas-managed -Ddatabase=derby</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
   <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
@@ -81,7 +83,7 @@ as soon it does not take too long.&#xd;
   <incrementalBuild>false</incrementalBuild>
   <localRepository class="hudson.maven.local_repo.DefaultLocalRepositoryLocator"/>
   <perModuleEmail>true</perModuleEmail>
-  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <ignoreUpstremChanges>true</ignoreUpstremChanges>
   <archivingDisabled>true</archivingDisabled>
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
@@ -389,11 +391,6 @@ as soon it does not take too long.&#xd;
     </hudson.plugins.violations.hudson.maven.ViolationsMavenReporter>
   </reporters>
   <publishers>
-    <com.sonatype.insight.ci.hudson.PostBuildScan>
-      <billOfMaterialsToken></billOfMaterialsToken>
-      <pathConfig/>
-      <failOnSecurityAlerts>false</failOnSecurityAlerts>
-    </com.sonatype.insight.ci.hudson.PostBuildScan>
     <hudson.plugins.warnings.WarningsPublisher>
       <healthy></healthy>
       <unHealthy></unHealthy>
@@ -463,6 +460,17 @@ as soon it does not take too long.&#xd;
       <latestOnly>false</latestOnly>
     </hudson.tasks.ArtifactArchiver>
     <hudson.plugins.dependencyanalyzer.DependencyAnalyzerPublisher/>
+    <hudson.plugins.clover.CloverPublisher>
+      <cloverReportDir>target/site/clover</cloverReportDir>
+      <cloverReportFileName>clover.xml</cloverReportFileName>
+      <healthyTarget>
+        <methodCoverage>70</methodCoverage>
+        <conditionalCoverage>80</conditionalCoverage>
+        <statementCoverage>80</statementCoverage>
+      </healthyTarget>
+      <unhealthyTarget/>
+      <failingTarget/>
+    </hudson.plugins.clover.CloverPublisher>
     <hudson.plugins.cobertura.CoberturaPublisher>
       <coberturaReportFile>**/target/site/cobertura/coverage.xml</coberturaReportFile>
       <onlyStable>false</onlyStable>
@@ -531,6 +539,13 @@ as soon it does not take too long.&#xd;
         </hudson.plugins.performance.JUnitParser>
       </parsers>
     </hudson.plugins.performance.PerformancePublisher>
+    <hudson.plugins.sonar.SonarPublisher>
+      <jdk>(Hérite du job)</jdk>
+      <branch></branch>
+      <language></language>
+      <mavenOpts></mavenOpts>
+      <jobAdditionalProperties>-Psample,!mda,arq-jbossas-managed -Ddatabase=derby</jobAdditionalProperties>
+    </hudson.plugins.sonar.SonarPublisher>
     <hudson.plugins.claim.ClaimPublisher/>
     <hudson.plugins.covcomplplot.CovComplPlotPublisher>
       <analyzer>Cobertura</analyzer>
@@ -538,41 +553,45 @@ as soon it does not take too long.&#xd;
       <excludeGetterSetter>false</excludeGetterSetter>
       <locateTopMost>true</locateTopMost>
     </hudson.plugins.covcomplplot.CovComplPlotPublisher>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>nabla-uml-continuous</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>-U clean validate -Psample,arq-jbossas-managed -DjdkLevel=1.6</targets>
+      <targets>clean clover2:setup clover2:optimize test clover2:snapshot -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
+      <pom>sample/timetracker-hibernate/pom.xml</pom>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </prebuilders>
   <postbuilders>
     <hudson.tasks.Maven>
-      <targets>javadoc:javadoc -Psample -DjdkLevel=1.6</targets>
+      <targets>javadoc:javadoc javadoc:jar -Psample,!mda -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
+      <pom>sample/timetracker-hibernate/pom.xml</pom>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
     <hudson.tasks.Maven>
-      <targets>javadoc:aggregate -Psample -DjdkLevel=1.6</targets>
+      <targets>source:jar source:test-jar -Psample,!mda -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
+      <pom>sample/timetracker-hibernate/pom.xml</pom>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
+      <usePrivateRepository>false</usePrivateRepository>
+    </hudson.tasks.Maven>
+    <hudson.tasks.Maven>
+      <targets>site -Psample,!mda,arq-jbossas-managed -Ddatabase=derby</targets>
+      <mavenName>Maven-3.0.4</mavenName>
+      <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
+      <pom>sample/timetracker-hibernate/pom.xml</pom>
+      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
+java.awt.headless=true</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
   </postbuilders>
   <runPostStepsIfResult>
-    <name>SUCCESS</name>
-    <ordinal>0</ordinal>
-    <color>BLUE</color>
+    <name>UNSTABLE</name>
+    <ordinal>1</ordinal>
+    <color>YELLOW</color>
   </runPostStepsIfResult>
 </maven2-moduleset>

@@ -23,17 +23,28 @@ This build check that all reports can still be generated and is doing sone addit
   <logRotator>
     <daysToKeep>7</daysToKeep>
     <numToKeep>3</numToKeep>
-    <artifactDaysToKeep>365</artifactDaysToKeep>
-    <artifactNumToKeep>3100</artifactNumToKeep>
+    <artifactDaysToKeep>7</artifactDaysToKeep>
+    <artifactNumToKeep>3</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.plugins.googlecode.GoogleCodeProjectProperty>
       <googlecodeWebsite>https://code.google.com/p/alban/</googlecodeWebsite>
     </hudson.plugins.googlecode.GoogleCodeProjectProperty>
+    <com.cloudbees.plugins.deployer.DeployNowJobProperty>
+      <oneClickDeploy>false</oneClickDeploy>
+      <configuration>
+        <user>alban.andrieu@free.fr</user>
+        <account>nabla</account>
+        <deployables/>
+      </configuration>
+    </com.cloudbees.plugins.deployer.DeployNowJobProperty>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
     <hudson.plugins.promoted__builds.JobPropertyImpl>
       <activeProcessNames>
-        <string>nabla-databese-integration-promoted</string>
+        <string>nabla-database-integration-promoted</string>
       </activeProcessNames>
     </hudson.plugins.promoted__builds.JobPropertyImpl>
   </properties>
@@ -47,13 +58,14 @@ This build check that all reports can still be generated and is doing sone addit
     <browser class="hudson.plugins.googlecode.GoogleCodeRepositoryBrowser"/>
     <excludedRegions></excludedRegions>
     <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <directory>trunk/databases</directory>
   </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
-  <jdk>(Default)</jdk>
+  <jdk>JDK 7u7</jdk>
   <triggers class="vector">
     <hudson.triggers.TimerTrigger>
       <spec>@weekly</spec>
@@ -67,7 +79,7 @@ This build check that all reports can still be generated and is doing sone addit
     <groupId>com.nabla.project</groupId>
     <artifactId>databases</artifactId>
   </rootModule>
-  <goals>-U -Dsurefire.useFile=false install pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample -Ddatabase=derby</goals>
+  <goals>-U -Dsurefire.useFile=false clover2:setup install clover2:aggregate clover2:clover pmd:pmd pmd:cpd checkstyle:checkstyle findbugs:findbugs cobertura:cobertura -Psample,integration -Ddatabase=derby</goals>
   <defaultGoals>install</defaultGoals>
   <mavenName>Maven-3.0.4</mavenName>
   <mavenOpts>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</mavenOpts>
@@ -80,7 +92,7 @@ This build check that all reports can still be generated and is doing sone addit
   <resolveDependencies>false</resolveDependencies>
   <processPlugins>false</processPlugins>
   <mavenValidationLevel>30</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
+  <runHeadless>true</runHeadless>
   <settingConfigId></settingConfigId>
   <globalSettingConfigId></globalSettingConfigId>
   <reporters>
@@ -475,6 +487,8 @@ This build check that all reports can still be generated and is doing sone addit
       <failUnstable>false</failUnstable>
       <autoUpdateHealth>false</autoUpdateHealth>
       <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <failNoReports>false</failNoReports>
       <healthyTarget>
         <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
           <entry>
@@ -545,7 +559,7 @@ This build check that all reports can still be generated and is doing sone addit
   <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Maven>
-      <targets>clean validate -Psample -Ddatabase=derby</targets>
+      <targets>clean clover2:setup clover2:optimize test clover2:snapshot -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
       <usePrivateRepository>false</usePrivateRepository>
@@ -553,7 +567,7 @@ This build check that all reports can still be generated and is doing sone addit
   </prebuilders>
   <postbuilders>
     <hudson.tasks.Maven>
-      <targets>javancss:report jdepend:generate -Psample -Ddatabase=derby</targets>
+      <targets>javancss:report -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
       <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
@@ -564,12 +578,15 @@ java.awt.headless=true</properties>
       <targets>javadoc:aggregate -Psample -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
       <jvmOptions>-Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M</jvmOptions>
-      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository</properties>
+      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
+java.awt.headless=true</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
     <hudson.tasks.Maven>
-      <targets>site -Psample,clover.report -Ddatabase=derby</targets>
+      <targets>site -Psample,integration -Ddatabase=derby</targets>
       <mavenName>Maven-3.0.4</mavenName>
+      <properties>maven.repo.local=/usr/share/tomcat6/.m2/repository
+java.awt.headless=true</properties>
       <usePrivateRepository>false</usePrivateRepository>
     </hudson.tasks.Maven>
     <hudson.tasks.Maven>
