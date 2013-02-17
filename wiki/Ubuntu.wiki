@@ -7,6 +7,9 @@ Kind of reminder...
 
 = Basics =
 
+Ubuntu + ZFS native + root filesystem
+[http://blog.blinkss.com/42577898 here]
+
 == Add a user == 
 
 {{{
