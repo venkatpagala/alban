@@ -12,4 +12,5 @@ Jenkins is used to build our application:
 
 = Do a release =
 
-You must use maven-release-plugin [http://blog-dev.net/tag/maven-release-plugin french doc]
+You must use maven-release-plugin [http://blog-dev.net/tag/maven-release-plugin french doc]. 
+It should be done via Jenkins
