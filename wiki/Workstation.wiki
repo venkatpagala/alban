@@ -46,3 +46,8 @@ Image contains the following :
  * Switch from JIRA to BugZilla.
  * Switch Confluence to MediaWiki
  * Switch SVN to GIT
+
+= System administration =
+
+Usefull live CD can be found at : http://livecdlist.com/ultimate-boot-cd
+or http://livecdlist.com/parted-magic which is smaller
