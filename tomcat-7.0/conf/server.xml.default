@@ -136,7 +136,7 @@
                prefix="localhost_access_log." suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
-        <Context path="/OnlineHelp" docBase="I:/work/OnlineHelp" crossContext="true"/>
+        <!--<Context path="/OnlineHelp" docBase="I:/work/OnlineHelp" crossContext="true"/>-->
 
       </Host>
     </Engine>
