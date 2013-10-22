@@ -26,13 +26,19 @@
   and thus are ignored when reading this file. Do not forget to remove
   <!.. ..> that surrounds them.
 -->
-  <role rolename="manager-gui"/>
-  <role rolename="manager-script"/>
-  <role rolename="manager"/>
+  <role rolename="admin"/>
   <role rolename="admin-gui"/>
   <role rolename="admin-script"/>
-  <role rolename="admin"/>
+  <role rolename="manager"/>
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-jmx"/>
+  <role rolename="manager-status"/>
+  <role rolename="role1"/>
+  
   <user username="admin" password="admin" roles="standard,manager,manager-gui,admin-gui,manager-script,manager-jmx,manager-status" />
+  <user username="role1" password="admin" roles="role1"/>
+  <user username="both" password="admin" roles="admin,role1"/>
 <!--
   <role rolename="tomcat"/>
   <role rolename="role1"/>
