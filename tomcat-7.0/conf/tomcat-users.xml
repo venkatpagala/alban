@@ -36,9 +36,9 @@
   <role rolename="manager-status"/>
   <role rolename="role1"/>
   
-  <user username="admin" password="admin" roles="standard,manager,manager-gui,admin-gui,manager-script,manager-jmx,manager-status" />
-  <user username="role1" password="admin" roles="role1"/>
-  <user username="both" password="admin" roles="admin,role1"/>
+  <user username="admin" password="microsoft" roles="standard,manager,manager-gui,admin-gui,manager-script,manager-jmx,manager-status" />
+  <user username="role1" password="microsoft" roles="role1"/>
+  <user username="both" password="microsoft" roles="admin,role1"/>
 <!--
   <role rolename="tomcat"/>
   <role rolename="role1"/>
