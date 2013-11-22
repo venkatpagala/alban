@@ -28,8 +28,7 @@ For clover and dashboard add :
 Install Jenkins on ubuntu
 
 {{{
-sudo groupadd build
-sudo useradd --create-home --shell /bin/bash --groups build jenkins
+sudo apt-get install jenkins
 }}}
 
 = Jenkins =
