@@ -25,19 +25,22 @@ All the tools listed below have been configure to works together.
 = Details =
 
 Image contains the following :
+ * Ubutu latest version
  * GParted/Synaptic/Samba/VNC
  * DHCP server with CloneZilla
  * LDAP (connected with NIS)
  * CROWD (connected to LDAP)
- * ALM Atlassian tools suite JIRA CONFLUENCE (connected with CROWD and SVN)
+ * ALM Atlassian tools suite JIRA CONFLUENCE CRUCIBLE (connected with CROWD and SVN)
  * Sonar (connected to MySQL and Jenkins)
- * Jenkins (connected to CROWD, Mavem, Scons, Quality tools)
- * Maven (connected to nexus and Quality tools)
- * Quality tools are Coding style/Checkstyle/Findbugs integrated with Maven/Jenkins/Eclipse
+ * Jenkins (connected to CROWD, Maven, Scons, Quality tools, AWS)
+ * Maven (connected to Nexus and Quality tools)
+ * Quality tools are Coding style/Checkstyle/Findbugs integrated with Maven/Jenkins/Eclipse (Mutation testing, Cargo deploy)
  * MySQL database
- * Eclipse (connected to SVN, Maven, Scons, Quality tools, Jenkins, JIRA)
- * APACHE with PHP : phpMyAdmin phpldapadmin
- * SVN repository
+ * Eclipse (connected to SVN, Maven, Scons, Sonar, Quality tools, Jenkins, JIRA)
+ * Apache with PHP : phpMyAdmin phpldapadmin (Apache as a reverse proxy with SSL)
+ * SVN/GIT repository tools
+ * Owncloud (with GoogleDrive and DropBox)
+ * ZFS, Synergy, Perl, Python, Ansible, Webmin, Usermin, Disk quota, Nagios, Geany...
 
 = What should be possible =
 
@@ -51,3 +54,10 @@ Image contains the following :
 
 Usefull live CD can be found at : http://livecdlist.com/ultimate-boot-cd
 or http://livecdlist.com/parted-magic which is smaller
+
+= TODO =
+
+Put each shareable features in separated ZFS, like eclipse, ALM tool, JBoss, Jenkins, Sonar.
+Create cerficate for SSL.
+Use CfEngine, Chief or Puppet
+Easily deactivate features like NIS, DHCP, ALM tools (All those feature cannot run all together on my Laptop)
