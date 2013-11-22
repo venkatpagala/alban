@@ -4,11 +4,13 @@
 
 = Jenkins =
 
+See sample [https://home.nabla.mobi/jenkins/ Jenkins Nabla]
+
 Add in maven :
- * -s/jenkins/tools/Maven/Maven-3.0.4/conf/settings.xml
- * maven.repo.local=/usr/share/tomcat6/.m2/repository
+ * -s ${WORKSPACE}/.m2/settings.xml
+ * maven.repo.local=~/.m2/repository
  * -Xms256m -Xmx512m -XX:PermSize=80M -XX:MaxPermSize=256M
- * -Psample
+ * -Psample,arq-jbossas-managed -Dserver=jboss5x -Ddatabase=derby
 
 Do not use goals (it does not works) :
  * javancss:report
@@ -30,45 +32,13 @@ sudo groupadd build
 sudo useradd --create-home --shell /bin/bash --groups build jenkins
 }}}
 
-= Hudson =
+= Jenkins =
 
-How to use Hudson for Nabla project..
+How to use Jenkins for Nabla project..
 
-= Hudson Plugins used =
+= Jenkins Plugins used =
 
-List of plugins installed in Hudson:
-  * Static Analysis Collector Plug-in
-  * Static Analysis Utilities
-  * Checkstyle Plug-in
-  * Hudson CMake plugin
-  * Jenkins Cobertura Plugin
-  * Hudson cppunit plugin
-  * Hudson CVS Plug-in
-  * Dashboard View
-  * Hudson Dependency Viewer Plugin
-  * Hudson Dependency Analyzer Plugin
-  * Dependency Graph Viewer Plugin
-  * Jenkins Doxygen Plug-in
-  * FindBugs Plug-in
-  * Hudson Fitnesse plugin
-  * Hudson Google Calendar plugin
-  * Hudson GIT plugin
-  * Hudson Google Code plugin
-  * Hudson JavaNCSS plugin
-  * Hudson JDepend Plugin
-  * Maven Deployment Linker
-  * Maven 2 job type Plugin
-  * Hudson :: Maven 3 :: Plugin
-  * Hudson :: Maven 3 :: SNAPSHOT Monitor
-  * Performance plugin
-  * PMD Plug-in
-  * Jenkins promoted builds plugin
-  * Repository Connector
-  * Hudson :: REST :: Plugin
-  * Jenkins SCons plugin
-  * Sonar Plugin
-  * Hudson SSH Slaves plugin
-  * Hudson Subversion Plug-in
-  * Task Scanner Plug-in
-  * Jenkins Violations plugin
-  * xUnit plugin
+See file : installedPlugins.xml
+
+= TODO =
+Selenium and Fitness
