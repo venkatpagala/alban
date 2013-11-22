@@ -1,9 +1,9 @@
-#summary What I call open source.
+#summary What I mean by open source.
 
 = Definition =
 
 This is what I call open source :
-Code under this project can be use by any one, as soon as that person contribute to the project ;-) (You can use it any way, but it would be nice to help).
+Code under this project can be use by any one, as soon as you contribute to the project ;-) (You can use it any way, but it would be nice to share you improvement and knowledge).
 
 = Warning =
 
