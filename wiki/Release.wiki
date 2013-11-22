@@ -3,6 +3,9 @@
 = Introduction =
 
 Artifacts cab be found [https://home.nabla.mobi/jenkins/job/nabla-trunk-all/lastSuccessfulBuild/artifact/ here]:
+
+= Some jobs sample =
+
   * [https://home.nabla.mobi/jenkins/job/nabla-servers-gwt-kitchensink-deploy/ gwt-kitchensink.war]
   * [https://home.nabla.mobi/jenkins/job/nabla-installer-continuous/ automatic installer]
   * [https://home.nabla.mobi/jenkins/job/nabla-project-mutation-testing/ mutation testing]
