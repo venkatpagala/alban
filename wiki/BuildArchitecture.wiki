@@ -1,0 +1,13 @@
+#Build architecture.
+
+= Introduction =
+
+Architecture overview.
+[http://home.nabla.mobi/nabla/nabla-build-architecture.bmp nabla-build-architecture]
+
+= Build =
+
+Continuous integration:
+  * Jenkins
+  * Nexus
+  * Build farm
