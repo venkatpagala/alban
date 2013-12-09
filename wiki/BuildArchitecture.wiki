@@ -8,7 +8,7 @@ http://home.nabla.mobi/nabla/nabla-build-architecture.jpg
 = Build =
 
 Continuous integration:
-  * High availibility [Jenkins https://home.nabla.mobi/jenkins/] with a load balancer, a ssh tunneling (apache), a reverse proxy and a fail over (varnish) to another Jenkins backup server. Data are replicated using rsync or using zfs send/receive. 
+  * High availibility [https://home.nabla.mobi/jenkins/ Jenkins] with a load balancer and a ssh tunneling (apache), a reverse proxy and a fail over (varnish) to another Jenkins backup server. Data are replicated using rsync or using zfs send/receive. 
   * Sonatype [http://home.nabla.mobi:8081/nexus/index.html#welcome Nexus] as a central artifacts cache and repo with TCM (not free) as artifacts and security monitoring.  Data are replicated using rsync or using zfs send/receive
   * Build farm on AWS with EC2 (not free for normal usage and security) for scalability
   * [http://home.nabla.mobi:9000/ Sonar] as code analyses tool. Data on a clustered and replicated mySQL [http://dev.mysql.com/doc/refman/5.0/en/ha-overview.html HA mySQL]
@@ -16,3 +16,5 @@ Continuous integration:
   * All Authentifaction (Jenkins, Sonar, Nexus, ALM) with atlassian Crowd connected to LDAP
   * Infrastructure monitoring through Xabbix or Nagios or Ncinga, Webmin, [https://home.nabla.mobi/cgi-bin/mon.cgi MON], [https://www.home.nabla.mobi/cgi-bin/awstats.pl?config=home.nabla.mobi AWStats], [https://home.nabla.mobi/cgi-bin/philesight.cgi Philesight], [https://home.nabla.mobi:20000/ Usermin], [https://home.nabla.mobi:10000/ Webmin], [https://home.nabla.mobi/phpmyadmin/ PhpMyAdmin], [https://home.nabla.mobi/phpldapadmin/ PhpLdapAdmin], [ftp://home.nabla.mobi:8021/ Ftp]
   * Document sharing using [https://home.nabla.mobi/owncloud Owncloud] connected to GoogleDrive and DropBox and NAS ZFS catalog
+
+TODO test : Nginx instead apache, [http://haproxy.1wt.eu/ HAProxy] instead [https://www.varnish-cache.org/docs/3.0/tutorial/advanced_backend_servers.html#health-checks Varnish], add [http://docs.codehaus.org/display/SONAR/Sonargraph+Plugin Sonargraph] to Sonar
