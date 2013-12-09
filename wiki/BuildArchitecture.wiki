@@ -3,11 +3,12 @@
 = Introduction =
 
 Architecture overview.
-[http://home.nabla.mobi/nabla/nabla-build-architecture.bmp nabla-build-architecture]
+http://home.nabla.mobi/nabla/nabla-build-architecture.jpg
 
 = Build =
 
 Continuous integration:
-  * Jenkins
-  * Nexus
-  * Build farm
+  * High availibility Jenkins with a load balancer, a reverse proxy, a fail over to another Jenkins backup server. Data are replicated using rsync or using zfs send/receive
+  * Sonatype Nexus as a central artifacts cache and repo with TCM (not free) as artifacts and security monitoring.  Data are replicated using rsync or using zfs send/receive
+  * Build farm on AWS with EC2 (not free for normal usage and security) for scalability
+  * Sonar as code analyses tool. Data on a clustered and replicated mySQL [http://dev.mysql.com/doc/refman/5.0/en/ha-overview.html HA mySQL]
