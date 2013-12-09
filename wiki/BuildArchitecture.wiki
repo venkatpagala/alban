@@ -15,3 +15,4 @@ Continuous integration:
   * ALM Atlassian tools JIRA / Conluence / Crucible / FishEye. Data on a clustered and replicated mySQL [https://confluence.atlassian.com/display/ATLAS/Failover+for+JIRA HA JIRA]. 
   * All Authentifaction (Jenkins, Sonar, Nexus, ALM) with atlassian Crowd connected to LDAP
   * Infrastructure monitoring through Xabbix or Nagios or Ncinga, Webmin, [https://home.nabla.mobi/cgi-bin/mon.cgi MON], [https://www.home.nabla.mobi/cgi-bin/awstats.pl?config=home.nabla.mobi AWStats], [https://home.nabla.mobi/cgi-bin/philesight.cgi Philesight], [https://home.nabla.mobi:20000/ Usermin], [https://home.nabla.mobi:10000/ Webmin], [https://home.nabla.mobi/phpmyadmin/ PhpMyAdmin], [https://home.nabla.mobi/phpldapadmin/ PhpLdapAdmin], [ftp://home.nabla.mobi:8021/ Ftp]
+  * Document sharing using [https://home.nabla.mobi/owncloud Owncloud] connected to GoogleDrive and DropBox and NAS ZFS catalog
