@@ -56,7 +56,7 @@ If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
 
 Plugins links are :
-  * Maven Integration for Eclipse Update Site - http://m2eclipse.sonatype.org/sites/m2e
+  * Maven Integration for Eclipse Update Site - http://download.eclipse.org/technology/m2e/releases
   * Maven Integration for Eclipse Update Extras Site - http://m2eclipse.sonatype.org/sites/m2e-extras
   * Google Update Site for Eclipse 3.7 - http://dl.google.com/eclipse/plugin/3.7
   * CheckStyle - http://eclipse-cs.sf.net/update
