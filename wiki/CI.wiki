@@ -31,9 +31,10 @@ Install Jenkins on ubuntu
 sudo apt-get install jenkins
 }}}
 
-= Jenkins =
+= Jenkins best practices =
 
-How to use Jenkins for Nabla project..
+How to use Jenkins for Nabla project.
+Please have a look to following best practices at : http://narkisr.github.io/jenkins-scaling/
 
 = Jenkins Plugins used =
 
