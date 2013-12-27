@@ -93,6 +93,14 @@
         <subsystem xmlns="urn:jboss:domain:configadmin:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:1.0">
             <datasources>
+                <datasource jndi-name="java:jboss/datasources/nablaDS" pool-name="nablaDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:mysql://localhost:3306/nabla?createDatabaseIfNotExist=true</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>nabla</user-name>
+                        <password>nabla</password>
+                    </security>
+                </datasource>            
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
                     <driver>h2</driver>
@@ -137,6 +145,9 @@
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
+                    <driver name="mysql" module="com.mysql">
+    			<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+		    </driver>
                 </drivers>
             </datasources>
         </subsystem>
