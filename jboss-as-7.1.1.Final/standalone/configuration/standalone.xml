@@ -151,6 +151,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+		<!--
                 <datasource jndi-name="java:jboss/datasources/MSSqlDS" pool-name="MSSqlDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:jtds:sqlserver://localhost:1433/DBName</connection-url>
                     <driver>sqlserver</driver>
@@ -167,6 +168,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
+		-->
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
