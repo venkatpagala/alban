@@ -36,7 +36,7 @@ sudo apt-get install jenkins
 How to use Jenkins for Nabla project.
 Please have a look to following best practices at : http://narkisr.github.io/jenkins-scaling/
 
-Jenkins HighAvailibility with gearman.
+Jenkins High Availability with gearman.
 See http://gearman.org/getting-started/
 And https://wiki.jenkins-ci.org/display/JENKINS/Gearman+Plugin
 
