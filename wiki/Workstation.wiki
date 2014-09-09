@@ -40,7 +40,7 @@ Image contains the following :
  * Apache with PHP : phpMyAdmin phpldapadmin (Apache as a reverse proxy with SSL)
  * SVN/GIT repository tools
  * Owncloud (with GoogleDrive and DropBox)
- * ZFS, Synergy, Perl, Python, Ansible, Webmin, Usermin, Disk quota, Nagios, Geany...
+ * ZFS, Synergy, Perl, Python, Ansible, Webmin, Usermin, Disk quota, Nagios or Zabbix, Cacti, Geany...
 
 = What should be possible =
 
