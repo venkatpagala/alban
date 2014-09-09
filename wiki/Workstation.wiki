@@ -45,7 +45,6 @@ Image contains the following :
 = What should be possible =
 
  * Easily switch C++ build from CMake to Scons
- * Switch from Jenkins to Hudson.
  * Switch from JIRA to BugZilla.
  * Switch Confluence to MediaWiki
  * Switch SVN to GIT
