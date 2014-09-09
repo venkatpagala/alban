@@ -55,9 +55,19 @@ Image contains the following :
 Usefull live CD can be found at : http://livecdlist.com/ultimate-boot-cd
 or http://livecdlist.com/parted-magic which is smaller
 
+= Ansible =
+
+Each shareable features has been put in a separated role : ZFS, JBoss, Tomcat, MySQL Jenkins, Sonar, Nexus.
+
+In order to run Ansible script to configure your workstation, please do the following:
+
+{{{
+cd env/ansible/
+./setup.sh
+}}}
+
 = TODO =
 
-Put each shareable features in separated ZFS, like eclipse, ALM tool, JBoss, Jenkins, Sonar.
+Add Eclipse role
 Create cerficate for SSL.
-Use CfEngine, Chief or Puppet
 Easily deactivate features like NIS, DHCP, ALM tools (All those feature cannot run all together on my Laptop)
