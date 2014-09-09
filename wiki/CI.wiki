@@ -4,7 +4,7 @@
 
 = Jenkins =
 
-See sample [https://home.nabla.mobi/jenkins/ Jenkins Nabla]
+See sample [http://home.nabla.mobi:8380/jenkins Jenkins Nabla]
 
 Add in maven :
  * -s ${WORKSPACE}/.m2/settings.xml
@@ -22,6 +22,10 @@ Do not use report (it does not works) :
 
 For clover and dashboard add :
  * java.awt.headless=true
+
+= Sonar =
+
+See sample [http://home.nabla.mobi:9000/ Sonar Nabla]
 
 == Ubuntu ==
 
