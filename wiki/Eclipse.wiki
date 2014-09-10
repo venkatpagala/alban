@@ -49,8 +49,13 @@ http://marketplace.eclipse.org/
 
 Plugins on Marketplace are :
   * JBoss Tools
-  * Subversive with SVNKit (Subclipse beta does not work)
+  * Subversive with SVNKit or Subclipse 1.10.05
   * Groovy-Eclipse
+  * PyDev
+  * EPIC (Perl)
+  * Maven Integration for Eclipse 1.5
+  * SonarQube 3.4.0
+  * Scala IDE 3.0.x
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
