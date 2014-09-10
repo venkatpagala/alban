@@ -54,8 +54,10 @@ Plugins on Marketplace are :
   * PyDev
   * EPIC (Perl)
   * Maven Integration for Eclipse 1.5
-  * SonarQube 3.4.0
   * Scala IDE 3.0.x
+
+Do not install (it failed with maven integration plugin)
+  * SonarQube 3.4.0
 
 If plugins not found on Eclipse Marketplace, go to :
 Help > Install New Software...
@@ -73,6 +75,7 @@ Plugins links are :
   * Sonar Integration for Eclipse (update-site) - http://dist.sonar-ide.codehaus.org/eclipse
   * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
   * Clover -  http://update.atlassian.com/eclipse/clover
+  * m2e-scala - http://alchim31.free.fr/m2e-scala/update-site/
 
 = C++ Plugins =
 
