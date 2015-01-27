@@ -55,6 +55,7 @@ Plugins on Marketplace are :
   * EPIC (Perl)
   * Maven Integration for Eclipse 1.5
   * Scala IDE 3.0.x
+  * Java Profiler 10.7 (VisualVM)
 
 Do not install (it failed with maven integration plugin)
   * SonarQube 3.4.0
@@ -76,6 +77,7 @@ Plugins links are :
   * TestNG (go to : http://marketplace.eclipse.org/content/testng-eclipse)
   * Clover -  http://update.atlassian.com/eclipse/clover
   * m2e-scala - http://alchim31.free.fr/m2e-scala/update-site/
+  * yourkit - http://www.yourkit.com/download/yjp2014_for_eclipse/
 
 = C++ Plugins =
 
