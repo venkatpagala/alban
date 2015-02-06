@@ -50,7 +50,7 @@ http://marketplace.eclipse.org/
 Plugins on Marketplace are :
   * JBoss Tools
   * Subversive with SVNKit or Subclipse 1.10.05
-  * Groovy-Eclipse
+  * Groovy-Eclipse for Juno 2.7.1
   * PyDev
   * EPIC (Perl)
   * Maven Integration for Eclipse 1.5
