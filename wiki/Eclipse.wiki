@@ -56,6 +56,8 @@ Plugins on Marketplace are :
   * Maven Integration for Eclipse 1.5
   * Scala IDE 3.0.x
   * Java Profiler 10.7 (VisualVM)
+  * Yedit 1.0.14 (YAML)
+  * Enide Studio 2014 (NodeJS http://www.nodeclipse.org/history)
 
 Do not install (it failed with maven integration plugin)
   * SonarQube 3.4.0
